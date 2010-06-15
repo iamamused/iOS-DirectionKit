@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* DemoAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* DemoViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* DemoViewController.m */; };
+		DD10C86B11C680EE004874F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD10C86A11C680EE004874F4 /* MapKit.framework */; };
+		DD10C91A11C6A04A004874F4 /* DKGoogleDirections.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10C91811C6A04A004874F4 /* DKGoogleDirections.h */; };
+		DD10C91B11C6A04A004874F4 /* DKGoogleDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C91911C6A04A004874F4 /* DKGoogleDirections.m */; };
+		DD10C96C11C6A1B2004874F4 /* DKRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10C96A11C6A1B2004874F4 /* DKRoute.h */; };
+		DD10C96D11C6A1B2004874F4 /* DKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C96B11C6A1B2004874F4 /* DKRoute.m */; };
+		DD10C97011C6A1CB004874F4 /* DKStep.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10C96E11C6A1CB004874F4 /* DKStep.h */; };
+		DD10C97111C6A1CB004874F4 /* DKStep.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C96F11C6A1CB004874F4 /* DKStep.m */; };
+		DD10C97411C6A1DC004874F4 /* DKLeg.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10C97211C6A1DC004874F4 /* DKLeg.h */; };
+		DD10C97511C6A1DC004874F4 /* DKLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C97311C6A1DC004874F4 /* DKLeg.m */; };
+		DD10C9C711C6A2F8004874F4 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9B211C6A2F8004874F4 /* CDataScanner.m */; };
+		DD10C9C811C6A2F8004874F4 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9B511C6A2F8004874F4 /* CDataScanner_Extensions.m */; };
+		DD10C9C911C6A2F8004874F4 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9B711C6A2F8004874F4 /* NSCharacterSet_Extensions.m */; };
+		DD10C9CA11C6A2F8004874F4 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9B911C6A2F8004874F4 /* NSDictionary_JSONExtensions.m */; };
+		DD10C9CB11C6A2F8004874F4 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9BB11C6A2F8004874F4 /* NSScanner_Extensions.m */; };
+		DD10C9CC11C6A2F8004874F4 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9BE11C6A2F8004874F4 /* CJSONDataSerializer.m */; };
+		DD10C9CD11C6A2F8004874F4 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9C011C6A2F8004874F4 /* CJSONDeserializer.m */; };
+		DD10C9CE11C6A2F8004874F4 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9C211C6A2F8004874F4 /* CJSONScanner.m */; };
+		DD10C9CF11C6A2F8004874F4 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9C411C6A2F8004874F4 /* CJSONSerializer.m */; };
+		DD10C9D011C6A2F8004874F4 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10C9C611C6A2F8004874F4 /* CSerializedJSONData.m */; };
+		DD10CC2411C6C577004874F4 /* DKWaypoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10CC2211C6C577004874F4 /* DKWaypoint.h */; };
+		DD10CC2511C6C577004874F4 /* DKWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10CC2311C6C577004874F4 /* DKWaypoint.m */; };
+		DD10CC9011C6C9E0004874F4 /* DKMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = DD10CC8E11C6C9E0004874F4 /* DKMapView.h */; };
+		DD10CC9111C6C9E0004874F4 /* DKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD10CC8F11C6C9E0004874F4 /* DKMapView.m */; };
+		DD7CFA0911721C4B0028A53F /* DirectionKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* DirectionKit_Prefix.pch */; };
+		DD7CFA0D11721CC20028A53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		DD7CFA3711721D890028A53F /* DirectionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7CFA3611721D890028A53F /* DirectionKit.h */; };
+		DDD4E8F311C7B7760030CF5B /* DKDirectionsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */; };
+		DDD4E97411C7BD4B0030CF5B /* DKRouteView.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */; };
+		DDD4E97511C7BD4B0030CF5B /* DKRouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */; };
+		DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E98911C7C07B0030CF5B /* DKLocation.h */; };
+		DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E98A11C7C07B0030CF5B /* DKLocation.m */; };
+		DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */; };
+		DDED24731178085C00DAD7DB /* libDirectionKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CF8E911720A330028A53F /* libDirectionKit.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD7CFCBC11725E980028A53F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD7CF8E811720A330028A53F;
+			remoteInfo = DirectionKitMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* DemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* DemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* DirectionKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirectionKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* DemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* DirectionKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionKit_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* DirectionKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DirectionKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DD10C86A11C680EE004874F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DD10C91811C6A04A004874F4 /* DKGoogleDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKGoogleDirections.h; path = include/DirectionKit/DKGoogleDirections.h; sourceTree = "<group>"; };
+		DD10C91911C6A04A004874F4 /* DKGoogleDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKGoogleDirections.m; path = include/DirectionKit/DKGoogleDirections.m; sourceTree = "<group>"; };
+		DD10C96A11C6A1B2004874F4 /* DKRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKRoute.h; path = include/DirectionKit/DKRoute.h; sourceTree = "<group>"; };
+		DD10C96B11C6A1B2004874F4 /* DKRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRoute.m; path = include/DirectionKit/DKRoute.m; sourceTree = "<group>"; };
+		DD10C96E11C6A1CB004874F4 /* DKStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKStep.h; path = include/DirectionKit/DKStep.h; sourceTree = "<group>"; };
+		DD10C96F11C6A1CB004874F4 /* DKStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKStep.m; path = include/DirectionKit/DKStep.m; sourceTree = "<group>"; };
+		DD10C97211C6A1DC004874F4 /* DKLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLeg.h; path = include/DirectionKit/DKLeg.h; sourceTree = "<group>"; };
+		DD10C97311C6A1DC004874F4 /* DKLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKLeg.m; path = include/DirectionKit/DKLeg.m; sourceTree = "<group>"; };
+		DD10C9B111C6A2F8004874F4 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		DD10C9B211C6A2F8004874F4 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		DD10C9B411C6A2F8004874F4 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		DD10C9B511C6A2F8004874F4 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		DD10C9B611C6A2F8004874F4 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		DD10C9B711C6A2F8004874F4 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
+		DD10C9B811C6A2F8004874F4 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		DD10C9B911C6A2F8004874F4 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		DD10C9BA11C6A2F8004874F4 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
+		DD10C9BB11C6A2F8004874F4 /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScanner_Extensions.m; sourceTree = "<group>"; };
+		DD10C9BD11C6A2F8004874F4 /* CJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDataSerializer.h; sourceTree = "<group>"; };
+		DD10C9BE11C6A2F8004874F4 /* CJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDataSerializer.m; sourceTree = "<group>"; };
+		DD10C9BF11C6A2F8004874F4 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		DD10C9C011C6A2F8004874F4 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		DD10C9C111C6A2F8004874F4 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		DD10C9C211C6A2F8004874F4 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		DD10C9C311C6A2F8004874F4 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		DD10C9C411C6A2F8004874F4 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		DD10C9C511C6A2F8004874F4 /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSerializedJSONData.h; sourceTree = "<group>"; };
+		DD10C9C611C6A2F8004874F4 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSerializedJSONData.m; sourceTree = "<group>"; };
+		DD10CC2211C6C577004874F4 /* DKWaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypoint.h; path = include/DirectionKit/DKWaypoint.h; sourceTree = "<group>"; };
+		DD10CC2311C6C577004874F4 /* DKWaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypoint.m; path = include/DirectionKit/DKWaypoint.m; sourceTree = "<group>"; };
+		DD10CC8E11C6C9E0004874F4 /* DKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMapView.h; path = include/DirectionKit/DKMapView.h; sourceTree = "<group>"; };
+		DD10CC8F11C6C9E0004874F4 /* DKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMapView.m; path = include/DirectionKit/DKMapView.m; sourceTree = "<group>"; };
+		DD7CF8E911720A330028A53F /* libDirectionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDirectionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7CF970117211070028A53F /* DirectionKit.framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DirectionKit.framework-Info.plist"; sourceTree = "<group>"; };
+		DD7CFA3611721D890028A53F /* DirectionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionKit.h; path = include/DirectionKit/DirectionKit.h; sourceTree = "<group>"; };
+		DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDirectionsDelegate.h; path = include/DirectionKit/DKDirectionsDelegate.h; sourceTree = "<group>"; };
+		DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKRouteView.h; path = include/DirectionKit/DKRouteView.h; sourceTree = "<group>"; };
+		DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRouteView.m; path = include/DirectionKit/DKRouteView.m; sourceTree = "<group>"; };
+		DDD4E98911C7C07B0030CF5B /* DKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLocation.h; path = include/DirectionKit/DKLocation.h; sourceTree = "<group>"; };
+		DDD4E98A11C7C07B0030CF5B /* DKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKLocation.m; path = include/DirectionKit/DKLocation.m; sourceTree = "<group>"; };
+		DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDelegate.h; path = include/DirectionKit/DKDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDED24731178085C00DAD7DB /* libDirectionKit.a in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				DD10C86B11C680EE004874F4 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7CF8E711720A330028A53F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7CFA0D11721CC20028A53F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD10C9B011C6A2F8004874F4 /* TouchJSON */,
+				1D3623240D0F684500981E51 /* DemoAppDelegate.h */,
+				1D3623250D0F684500981E51 /* DemoAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* DemoViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* DemoViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* DirectionKit.app */,
+				DD7CF8E911720A330028A53F /* libDirectionKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				DD7CF92311720D8B0028A53F /* DirectionKit Framework */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* DirectionKit_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2899E5210DE3E06400AC0155 /* DemoViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* DirectionKit-Info.plist */,
+				DD7CF970117211070028A53F /* DirectionKit.framework-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				DD10C86A11C680EE004874F4 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD10C9B011C6A2F8004874F4 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				DD10C9B111C6A2F8004874F4 /* CDataScanner.h */,
+				DD10C9B211C6A2F8004874F4 /* CDataScanner.m */,
+				DD10C9B311C6A2F8004874F4 /* Extensions */,
+				DD10C9BC11C6A2F8004874F4 /* JSON */,
+			);
+			name = TouchJSON;
+			path = ../TouchJSON;
+			sourceTree = "<group>";
+		};
+		DD10C9B311C6A2F8004874F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD10C9B411C6A2F8004874F4 /* CDataScanner_Extensions.h */,
+				DD10C9B511C6A2F8004874F4 /* CDataScanner_Extensions.m */,
+				DD10C9B611C6A2F8004874F4 /* NSCharacterSet_Extensions.h */,
+				DD10C9B711C6A2F8004874F4 /* NSCharacterSet_Extensions.m */,
+				DD10C9B811C6A2F8004874F4 /* NSDictionary_JSONExtensions.h */,
+				DD10C9B911C6A2F8004874F4 /* NSDictionary_JSONExtensions.m */,
+				DD10C9BA11C6A2F8004874F4 /* NSScanner_Extensions.h */,
+				DD10C9BB11C6A2F8004874F4 /* NSScanner_Extensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD10C9BC11C6A2F8004874F4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DD10C9BD11C6A2F8004874F4 /* CJSONDataSerializer.h */,
+				DD10C9BE11C6A2F8004874F4 /* CJSONDataSerializer.m */,
+				DD10C9BF11C6A2F8004874F4 /* CJSONDeserializer.h */,
+				DD10C9C011C6A2F8004874F4 /* CJSONDeserializer.m */,
+				DD10C9C111C6A2F8004874F4 /* CJSONScanner.h */,
+				DD10C9C211C6A2F8004874F4 /* CJSONScanner.m */,
+				DD10C9C311C6A2F8004874F4 /* CJSONSerializer.h */,
+				DD10C9C411C6A2F8004874F4 /* CJSONSerializer.m */,
+				DD10C9C511C6A2F8004874F4 /* CSerializedJSONData.h */,
+				DD10C9C611C6A2F8004874F4 /* CSerializedJSONData.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		DD7CF92311720D8B0028A53F /* DirectionKit Framework */ = {
+			isa = PBXGroup;
+			children = (
+				DD7CFA3611721D890028A53F /* DirectionKit.h */,
+				DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */,
+				DD10CC8E11C6C9E0004874F4 /* DKMapView.h */,
+				DD10CC8F11C6C9E0004874F4 /* DKMapView.m */,
+				DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */,
+				DD10C91811C6A04A004874F4 /* DKGoogleDirections.h */,
+				DD10C91911C6A04A004874F4 /* DKGoogleDirections.m */,
+				DD10C96A11C6A1B2004874F4 /* DKRoute.h */,
+				DD10C96B11C6A1B2004874F4 /* DKRoute.m */,
+				DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */,
+				DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */,
+				DD10C97211C6A1DC004874F4 /* DKLeg.h */,
+				DD10C97311C6A1DC004874F4 /* DKLeg.m */,
+				DD10C96E11C6A1CB004874F4 /* DKStep.h */,
+				DD10C96F11C6A1CB004874F4 /* DKStep.m */,
+				DD10CC2211C6C577004874F4 /* DKWaypoint.h */,
+				DD10CC2311C6C577004874F4 /* DKWaypoint.m */,
+				DDD4E98911C7C07B0030CF5B /* DKLocation.h */,
+				DDD4E98A11C7C07B0030CF5B /* DKLocation.m */,
+			);
+			name = "DirectionKit Framework";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DD7CF8E511720A330028A53F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7CFA0911721C4B0028A53F /* DirectionKit_Prefix.pch in Headers */,
+				DD7CFA3711721D890028A53F /* DirectionKit.h in Headers */,
+				DD10C91A11C6A04A004874F4 /* DKGoogleDirections.h in Headers */,
+				DD10C96C11C6A1B2004874F4 /* DKRoute.h in Headers */,
+				DD10C97011C6A1CB004874F4 /* DKStep.h in Headers */,
+				DD10C97411C6A1DC004874F4 /* DKLeg.h in Headers */,
+				DD10CC2411C6C577004874F4 /* DKWaypoint.h in Headers */,
+				DD10CC9011C6C9E0004874F4 /* DKMapView.h in Headers */,
+				DDD4E8F311C7B7760030CF5B /* DKDirectionsDelegate.h in Headers */,
+				DDD4E97411C7BD4B0030CF5B /* DKRouteView.h in Headers */,
+				DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */,
+				DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD7CFCBD11725E980028A53F /* PBXTargetDependency */,
+			);
+			name = Demo;
+			productName = DirectionKit;
+			productReference = 1D6058910D05DD3D006BFB54 /* DirectionKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD7CF8E811720A330028A53F /* DirectionKitMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7CF8EF11720A600028A53F /* Build configuration list for PBXNativeTarget "DirectionKitMobile" */;
+			buildPhases = (
+				DD7CF8E511720A330028A53F /* Headers */,
+				DD7CF8E611720A330028A53F /* Sources */,
+				DD7CF8E711720A330028A53F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DirectionKitMobile;
+			productName = DirectionKitMobile;
+			productReference = DD7CF8E911720A330028A53F /* libDirectionKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "DirectionKit" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Demo */,
+				DD7CF8E811720A330028A53F /* DirectionKitMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* DemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* DemoAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* DemoViewController.m in Sources */,
+				DD10C9C711C6A2F8004874F4 /* CDataScanner.m in Sources */,
+				DD10C9C811C6A2F8004874F4 /* CDataScanner_Extensions.m in Sources */,
+				DD10C9C911C6A2F8004874F4 /* NSCharacterSet_Extensions.m in Sources */,
+				DD10C9CA11C6A2F8004874F4 /* NSDictionary_JSONExtensions.m in Sources */,
+				DD10C9CB11C6A2F8004874F4 /* NSScanner_Extensions.m in Sources */,
+				DD10C9CC11C6A2F8004874F4 /* CJSONDataSerializer.m in Sources */,
+				DD10C9CD11C6A2F8004874F4 /* CJSONDeserializer.m in Sources */,
+				DD10C9CE11C6A2F8004874F4 /* CJSONScanner.m in Sources */,
+				DD10C9CF11C6A2F8004874F4 /* CJSONSerializer.m in Sources */,
+				DD10C9D011C6A2F8004874F4 /* CSerializedJSONData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7CF8E611720A330028A53F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD10C91B11C6A04A004874F4 /* DKGoogleDirections.m in Sources */,
+				DD10C96D11C6A1B2004874F4 /* DKRoute.m in Sources */,
+				DD10C97111C6A1CB004874F4 /* DKStep.m in Sources */,
+				DD10C97511C6A1DC004874F4 /* DKLeg.m in Sources */,
+				DD10CC2511C6C577004874F4 /* DKWaypoint.m in Sources */,
+				DD10CC9111C6C9E0004874F4 /* DKMapView.m in Sources */,
+				DDD4E97511C7BD4B0030CF5B /* DKRouteView.m in Sources */,
+				DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD7CFCBD11725E980028A53F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD7CF8E811720A330028A53F /* DirectionKitMobile */;
+			targetProxy = DD7CFCBC11725E980028A53F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DirectionKit_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/include/\"";
+				INFOPLIST_FILE = "DirectionKit-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = DirectionKit;
+				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DirectionKit_Prefix.pch;
+				INFOPLIST_FILE = "DirectionKit-Info.plist";
+				PRODUCT_NAME = DirectionKit;
+				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		DD7CF8ED11720A330028A53F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = DirectionKit;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		DD7CF8EE11720A330028A53F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = DirectionKitMobile;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "DirectionKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7CF8EF11720A600028A53F /* Build configuration list for PBXNativeTarget "DirectionKitMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7CF8ED11720A330028A53F /* Debug */,
+				DD7CF8EE11720A330028A53F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

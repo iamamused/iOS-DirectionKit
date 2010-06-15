@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'DirectionKit' target in the 'DirectionKit' project
+//  DirectionKit
+//
+//  Created by Jeffrey Sambells on 10-06-14.
+//  Copyright 2010 TropicalPixels. All rights reserved.
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
