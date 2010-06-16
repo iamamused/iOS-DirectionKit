@@ -1,5 +1,5 @@
 //
-//  DKLocation.h
+//  DKWaypointAccruacyIndicator.h
 //  DirectionKit
 //
 //  The MIT License
@@ -25,14 +25,11 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import <UIKit/UIKit.h>
 
-@interface DKLocation : NSObject {
-	double latitude;
-	double longitude;
+
+@interface DKWaypointAccruacyIndicator : UIView {
+
 }
-
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
 
 @end

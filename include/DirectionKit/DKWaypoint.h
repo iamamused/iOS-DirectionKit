@@ -27,15 +27,30 @@
 
 #import <DirectionKit/DirectionKit.h>
 
+@class DKMapView;
+@class DKWaypoint;
 
 @interface DKWaypoint : NSObject <MKAnnotation> {
 	CLLocationCoordinate2D coordinate;
+	NSString *title;
+	NSString *subtitle;
 	int position;
+	
+	id<DKWaypointDelegate> delegate;
 }
 
+@property (nonatomic, assign) id<DKWaypointDelegate> delegate;
+
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *subtitle;
+
 @property (nonatomic, assign) int position;
 
 + (DKWaypoint *)waypointWithLatitude:(float)lat Longitude:(float)lng;
+
+- (UIView *)pinViewForMap:(DKMapView *)map; 
+
+- (void)showDetails:(id)sender;
 
 @end

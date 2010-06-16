@@ -70,38 +70,64 @@
 #pragma mark Routing
 
 - (void)showRoute:(DKRoute *)route {
-
-	if (routeView != nil) {
-		[routeView removeFromSuperview];
-		[routeView release];
-		routeView = nil;
+	if (routePoly != nil) {
+		[self removeOverlay:routePoly];
 		[self removeAnnotations:self.annotations];
 	}
-	routeView = [[DKRouteView alloc] initWithRoute:route map:self];
-	[routeView zoomToRoute];
+	routePoly = [[route polylineWithAccuracy:kDKRouteAccuracyFine] retain];
+	[self addOverlay:routePoly];
 	
-	[self addAnnotations:[route waypoints]];
+	NSArray *waypoints = [route waypoints];
+
+	[self addAnnotations:waypoints];
 	
+	[self zoomToWaypoints:waypoints];
+	
+}
+
+#pragma mark -
+#pragma mark Map Interaction
+- (void)zoomToWaypoints:(NSArray *)waypoints;
+{
+	
+	// Calculate the extents of the trip points that were passed in, 
+	// and zoom in to that area.
+	CLLocationDegrees maxLat = -90;
+	CLLocationDegrees maxLon = -180;
+	CLLocationDegrees minLat = 90;
+	CLLocationDegrees minLon = 180;
+	
+	for( DKWaypoint *wp in waypoints ) {
+		if(wp.coordinate.latitude > maxLat) {
+			maxLat = wp.coordinate.latitude;
+		}
+		if(wp.coordinate.latitude < minLat) {
+			minLat = wp.coordinate.latitude;
+		}
+		if(wp.coordinate.longitude > maxLon) {
+			maxLon = wp.coordinate.longitude;
+		}
+		if(wp.coordinate.longitude < minLon) {
+			minLon = wp.coordinate.longitude;
+		}
+	}
+	
+	MKCoordinateRegion region;
+	region.center.latitude     = (maxLat + minLat) / 2;
+	region.center.longitude    = (maxLon + minLon) / 2;
+	region.span.latitudeDelta  = maxLat - minLat;
+	region.span.longitudeDelta = maxLon - minLon;
+	
+	[self setRegion:region animated:YES];
 }
 
 #pragma mark -
 #pragma mark Map Delegate
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated;
-{
-	// turn off the view of the route as the map is chaning regions. This prevents
-	// the line from being displayed at an incorrect positoin on the map during the
-	// transition. 
-	routeView.hidden = YES;
-}
-
+{}
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated;
-{
-	// re-enable and re-poosition the route display. 
-	routeView.hidden = NO;
-	[routeView setNeedsDisplay];
-}
-
+{}
 - (void)mapViewWillStartLoadingMap:(MKMapView *)mapView;
 { }
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView;
@@ -112,9 +138,13 @@
 #pragma mark -
 #pragma mark MKMapViewDelegate
 
-- (void)showDetails:(id)sender
-{
-	//TODO call our DK delegate...
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+	// TODO move this to the route object and make in an overlay protocol
+    MKPolylineView *plv = [[[MKPolylineView alloc] initWithOverlay:overlay] autorelease];
+    plv.strokeColor = [UIColor blueColor];
+    plv.lineWidth = 3.0;
+	plv.alpha = 0.8f;
+    return plv;
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -125,36 +155,7 @@
 	}
     
     if ([annotation isKindOfClass:[DKWaypoint class]]) {
-
-		// Try to dequeue an existing pin view first
-        static NSString* WaypointAnnotationIdentifier = @"waypointAnnotationIdentifier";
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
-		[self dequeueReusableAnnotationViewWithIdentifier:WaypointAnnotationIdentifier];
-        
-		if (!pinView) {
-			
-            // If an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
-												   initWithAnnotation:annotation reuseIdentifier:WaypointAnnotationIdentifier] autorelease];
-            customPinView.pinColor = MKPinAnnotationColorRed;
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-            
-			UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            
-			[rightButton addTarget:self
-                            action:@selector(showDetails:)
-                  forControlEvents:UIControlEventTouchUpInside];
-            
-			customPinView.rightCalloutAccessoryView = rightButton;
-            
-			return customPinView;
-			
-        } else {
-            pinView.annotation = annotation;
-        }
-		
-        return pinView;
+		return [(DKWaypoint *)annotation pinViewForMap:self];
     }
 	
     return nil;
@@ -179,7 +180,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
 {
-	[routeView setNeedsDisplay];
+	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     //[map touchesBegan:touches withEvent:event];
     [super touchesBegan:touches withEvent:event];
@@ -187,14 +188,14 @@
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	[routeView setNeedsDisplay];
+	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     [map touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	[routeView setNeedsDisplay];
+	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     //[map touchesEnded:touches withEvent:event];
     [super touchesEnded:touches withEvent:event];
@@ -203,7 +204,7 @@
 - (void)dealloc {
 	[directions release];
 	[routes release];
-	[routeView release];
+	[routePoly release];
 	[super dealloc];
 }
 				  

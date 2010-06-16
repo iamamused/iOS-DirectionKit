@@ -35,7 +35,7 @@
 @interface DKMapView : MKMapView <DKDirectionsDelegate, MKMapViewDelegate> {
 	UIView *map;
 	DKGoogleDirections *directions;
-	DKRouteView *routeView;
+	MKPolyline *routePoly;
 	NSArray *routes;
 }
 

@@ -41,6 +41,12 @@
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
 {
 	
+	// position the waypoints.
+	int pos = 0;
+	for (DKWaypoint *wp in waypoints) {
+		[wp setPosition:++pos];
+	}
+	
 	_wp = [waypoints retain];
 	
 	DKWaypoint *o = [waypoints objectAtIndex:0];
@@ -106,6 +112,7 @@
 		NSArray *dkRoutes = [dictionary objectForKey:@"routes"];
 		for (NSDictionary *routeDict in dkRoutes) {
 			DKRoute *route = [[DKRoute alloc] initWithDict:routeDict];
+			[route setWaypoints:_wp];
 			[routes addObject:route];
 			[route release];
 		}

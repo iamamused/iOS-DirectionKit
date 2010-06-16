@@ -31,6 +31,7 @@
 
 // Include your plugin related headers here...
 #import "DKDelegate.h"
+#import "DKWaypointDelegate.h"
 #import "DKDirectionsDelegate.h"
 #import "DKLocation.h"
 #import "DKGoogleDirections.h"

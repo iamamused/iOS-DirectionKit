@@ -36,6 +36,8 @@
 @synthesize copyrights;
 @synthesize warnings;
 
+@synthesize waypoints;
+
 - (id)init {
 	if (self = [super init]) {
 		self.legs = [[NSMutableArray array] retain];
@@ -66,7 +68,7 @@
 #pragma mark -
 #pragma mark Paths
 
-- (NSArray *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;
+- (MKPolyline *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;
 {
 	NSMutableArray *poly;
 	switch (accuracy) {
@@ -84,7 +86,16 @@
 			}
 			break;
 	}
-	return poly;
+	
+	
+	CLLocationCoordinate2D polyPoints[[poly count]];
+	int count = 0;
+	for(DKLocation *loc in poly) {
+		polyPoints[count++] = (CLLocationCoordinate2D){loc.latitude,loc.longitude};
+	}
+	
+	return [MKPolyline polylineWithCoordinates:polyPoints count:[poly count]];
+
 }
 
 - (NSArray *)_decodePoly:(NSString *)encoded {
@@ -130,6 +141,7 @@
 #pragma mark -
 #pragma mark Waypoints
 
+/*
 - (NSArray *)waypoints;
 {
 	int position = 1;
@@ -151,6 +163,7 @@
 	
 	return wps;
 }
+*/
 
 #pragma mark -
 #pragma mark Memory

@@ -1,5 +1,5 @@
 //
-//  DKLocation.h
+//  DKMapViewCurrentLocationMarker.m
 //  DirectionKit
 //
 //  The MIT License
@@ -25,14 +25,22 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import "DKMapViewCurrentLocationMarker.h"
 
-@interface DKLocation : NSObject {
-	double latitude;
-	double longitude;
+
+@implementation DKMapViewCurrentLocationMarker
+
+- (UIImage *)iconImage {
+	return [UIImage imageNamed:@"current-location.png"]; // 11x11
 }
 
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
+- (CGPoint)infoWindowAnchorPoint {
+	return CGPointMake(self.position.x + 2, self.position.y - 26);
+}
+
+- (CGPoint)anchorPoint {
+	return CGPointMake(6.5f, 6.5f);  // from top left
+}
+
 
 @end

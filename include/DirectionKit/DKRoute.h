@@ -39,6 +39,8 @@ typedef enum {
 	NSDictionary   *overviewPolyline;
 	NSString       *copyrights;
 	NSArray        *warnings;
+	
+	NSArray        *waypoints;
 }
 
 // summary contains a short textual description for the route, suitable for naming and disambiguating the route from alternatives.
@@ -59,9 +61,10 @@ typedef enum {
 // warnings[] contains an array of warnings to be displayed when showing these directions. You must handle and display these warnings yourself.
 @property (nonatomic, retain) NSArray *warnings;
 
+@property (nonatomic, retain) NSArray *waypoints;
 
 - (id) initWithDict:(NSDictionary *)dict;
-- (NSArray *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;
+- (MKPolyline *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;
 - (NSArray *)waypoints;
 
 

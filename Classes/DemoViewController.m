@@ -25,19 +25,30 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated
-{
-    [self.navigationController setToolbarHidden:NO animated:NO];
-}
+{}
 
 - (void)viewDidLoad
 {
+	
+	DKWaypoint *cn = [DKWaypoint waypointWithLatitude:43.643995f Longitude:-79.388237f]; // CN Tower
+	[cn setTitle:@"CN Tower"];
+	[cn setDelegate:self];
+	
+	DKWaypoint *rom = [DKWaypoint waypointWithLatitude:43.668038f Longitude:-79.394948f]; // Royal Ontario Museum
+	[rom setTitle:@"Royal Ontario Museum"];
+	[rom setDelegate:self];
+
+	DKWaypoint *fy = [DKWaypoint waypointWithLatitude:43.638451f Longitude:-79.405231f]; // Fort York
+	[fy setTitle:@"Fort York"];
+	[fy setDelegate:self];
+
+	DKWaypoint *sc = [DKWaypoint waypointWithLatitude:43.716333f Longitude:-79.338734f]; // Science Center
+	[sc setTitle:@"Ontario Science Center"];
+	[sc setDelegate:self];
+
     [(MKMapView *)self.view setMapType:MKMapTypeStandard];
-	[(DKMapView *)self.view loadDirectionsThroughWaypoints:[NSArray arrayWithObjects:
-											[DKWaypoint waypointWithLatitude:43.643995f Longitude:-79.388237f], // CN Tower
-											[DKWaypoint waypointWithLatitude:43.668038f Longitude:-79.394948f], // Royal Ontario Museum
-											[DKWaypoint waypointWithLatitude:43.638451f Longitude:-79.405231f], // Fort York
-											[DKWaypoint waypointWithLatitude:43.716333f Longitude:-79.338734f], // Science Center
-											nil]];
+	[(DKMapView *)self.view loadDirectionsThroughWaypoints:[NSArray arrayWithObjects: cn, rom, fy, sc, nil]];
+	
 }
 
 - (void)viewDidUnload {
@@ -50,12 +61,20 @@
 }
 
 
+#pragma mark -
+#pragma mark DKWaypointDelegate
 
-- (void)showDetails:(id)sender
+- (void)waypointShowDetails:(DKWaypoint *)waypoint;
 {
-    // the detail view does not want a toolbar so hide it
-    [self.navigationController setToolbarHidden:YES animated:NO];
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+	
+	if (self.detailViewController == nil) {
+		DemoDetailViewController *detail = [[DemoDetailViewController alloc] initWithNibName:@"DemoDetailViewController" bundle:nil];
+		[self setDetailViewController:detail];
+		[detail release];
+	}
+	
+	[self presentModalViewController:self.detailViewController animated:YES];
+	
 }
 
 @end

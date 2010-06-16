@@ -30,29 +30,96 @@
 
 @implementation DKWaypoint
 
+@synthesize delegate;
 @synthesize coordinate, position;
+@synthesize title, subtitle;
 
 + (DKWaypoint *)waypointWithLatitude:(float)lat Longitude:(float)lng;
 {
-	DKWaypoint *wp = [[self alloc] init];
-	
+	DKWaypoint *wp = [[DKWaypoint alloc] init];	
 	wp.coordinate = (CLLocationCoordinate2D){lat,lng};
-	
 	[wp autorelease];
 	return wp;
 }
 
-#pragma mark -
-#pragma mark MKAnnotation
-
-- (NSString *)title
+- (UIView *)pinViewForMap:(DKMapView *)map; 
 {
-    return [NSString stringWithFormat:@"Waypoint %d", position];
+	// Try to dequeue an existing pin view first
+	static NSString* WaypointAnnotationIdentifier = @"waypointAnnotationIdentifier";
+	MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+	[map dequeueReusableAnnotationViewWithIdentifier:WaypointAnnotationIdentifier];
+	
+	if (!pinView) {
+		
+		// If an existing pin view was not available, create one
+		MKAnnotationView* view = [[[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:WaypointAnnotationIdentifier] autorelease];
+
+		//view.animatesDrop = YES;
+		view.canShowCallout = YES;
+
+		UIImage *img = [UIImage imageNamed:@"pin.png"];
+		
+		
+		CGRect resizeRect;
+		resizeRect.size = img.size;
+		
+		/*
+		CGSize maxSize = CGRectInset(self.view.bounds,
+									 [MapViewController annotationPadding],
+									 [MapViewController annotationPadding]).size;
+		maxSize.height -= self.navigationController.navigationBar.frame.size.height + [MapViewController calloutHeight];
+		if (resizeRect.size.width > maxSize.width)
+			resizeRect.size = CGSizeMake(maxSize.width, resizeRect.size.height / resizeRect.size.width * maxSize.width);
+		if (resizeRect.size.height > maxSize.height)
+			resizeRect.size = CGSizeMake(resizeRect.size.width / resizeRect.size.height * maxSize.height, maxSize.height);
+		*/
+		
+		resizeRect.origin = (CGPoint){0.0f, 0.0f};
+		
+		UIGraphicsBeginImageContext(resizeRect.size);
+		[img drawInRect:resizeRect];
+		[[UIColor whiteColor] setFill];
+		UIFont *font = [UIFont fontWithName:@"Helvetica" size:18.0f];
+		NSString *pos = [NSString stringWithFormat:@"%d", position];
+		[pos drawAtPoint:(CGPoint){resizeRect.size.width / 2,4.0f} forWidth:resizeRect.size.width withFont:font lineBreakMode:UILineBreakModeClip];
+		UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+		UIGraphicsEndImageContext();
+		
+		view.image = resizedImage;
+		
+		view.opaque = NO;
+		
+		
+		if (delegate != nil) {
+			
+			// add a detail disclosure button to the callout which will open a new view controller page
+            //
+            // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+            //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+            //
+			
+			UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+			[rightButton addTarget:self
+							action:@selector(showDetails:)
+				  forControlEvents:UIControlEventTouchUpInside];
+			
+			view.rightCalloutAccessoryView = rightButton;
+		}
+		
+		return view;
+		
+	} else {
+		pinView.annotation = self;
+	}
+	
+	return pinView;
 }
 
-- (NSString *)subtitle
-{
-    return @"//TODO";
+- (void)showDetails:(id)sender;
+{	
+	if (delegate) {
+		[delegate waypointShowDetails:self];
+	}
 }
 
 @end

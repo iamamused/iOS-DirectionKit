@@ -1,5 +1,5 @@
 //
-//  DKLocation.h
+//  DKWaypointDelegate.h
 //  DirectionKit
 //
 //  The MIT License
@@ -27,12 +27,9 @@
 
 #import <DirectionKit/DirectionKit.h>
 
-@interface DKLocation : NSObject {
-	double latitude;
-	double longitude;
-}
+@class DKWaypoint;
 
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
-
+@protocol DKWaypointDelegate
+@required
+- (void)waypointShowDetails:(DKWaypoint *)waypoint;
 @end

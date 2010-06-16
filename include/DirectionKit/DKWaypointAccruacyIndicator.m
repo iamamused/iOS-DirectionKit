@@ -1,5 +1,5 @@
 //
-//  DKLocation.h
+//  DKMapViewMarkerAccruacy.m
 //  DirectionKit
 //
 //  The MIT License
@@ -25,14 +25,48 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import "DKWaypointAccruacyIndicator.h"
 
-@interface DKLocation : NSObject {
-	double latitude;
-	double longitude;
+
+@implementation DKWaypointAccruacyIndicator
+
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        // Initialization code
+    }
+    return self;
 }
 
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
+
+- (void)drawRect:(CGRect)rect {
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	// Drawing with a white stroke color
+	CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
+	// And draw with a blue fill color
+	CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
+	// Draw them with a 2.0 stroke width so they are a bit more visible.
+	CGContextSetLineWidth(context, 2.0);
+	
+	// Add an ellipse circumscribed in the given rect to the current path, then stroke it
+	CGContextAddEllipseInRect(context, CGRectMake(0.0f, 0.0f, 15.0f, 15.0f));
+	CGContextStrokePath(context);
+	
+	// Stroke ellipse convenience that is equivalent to AddEllipseInRect(); StrokePath();
+	CGContextStrokeEllipseInRect(context, CGRectMake(30.0, 120.0, 60.0, 60.0));
+	
+	// Fill rect convenience equivalent to AddEllipseInRect(); FillPath();
+	CGContextFillEllipseInRect(context, CGRectMake(30.0, 210.0, 60.0, 60.0));
+	
+	
+}
+
+
+- (void)dealloc {
+    [super dealloc];
+}
+
 
 @end

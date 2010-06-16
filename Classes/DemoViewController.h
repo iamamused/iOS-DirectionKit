@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <DirectionKit/DirectionKit.h>
+#import "DemoDetailViewController.h"
 
-@class DKWaypointDetailViewController;
-
-@interface DemoViewController : UIViewController <MKMapViewDelegate>
+@interface DemoViewController : UIViewController <DKWaypointDelegate>
 {
-    DKWaypointDetailViewController *detailViewController;
+    DemoDetailViewController *detailViewController;
 }
 
-@property (nonatomic, retain) DKWaypointDetailViewController *detailViewController;
+@property (nonatomic, retain) DemoDetailViewController *detailViewController;
 
 @end
 

@@ -47,7 +47,19 @@
 		DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E98911C7C07B0030CF5B /* DKLocation.h */; };
 		DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E98A11C7C07B0030CF5B /* DKLocation.m */; };
 		DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */; };
+		DDD6FA9411C931AE00842991 /* DemoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FA9211C931AE00842991 /* DemoDetailViewController.m */; };
+		DDD6FA9511C931AE00842991 /* DemoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD6FA9311C931AE00842991 /* DemoDetailViewController.xib */; };
+		DDD6FB3311C953B200842991 /* DKMapViewCurrentLocationMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD6FB2B11C953B200842991 /* DKMapViewCurrentLocationMarker.h */; };
+		DDD6FB3411C953B200842991 /* DKMapViewCurrentLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB2C11C953B200842991 /* DKMapViewCurrentLocationMarker.m */; };
+		DDD6FB3511C953B200842991 /* DKCalloutView.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD6FB2D11C953B200842991 /* DKCalloutView.h */; };
+		DDD6FB3611C953B200842991 /* DKCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB2E11C953B200842991 /* DKCalloutView.m */; };
+		DDD6FB3711C953B200842991 /* DKWaypointView.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD6FB2F11C953B200842991 /* DKWaypointView.h */; };
+		DDD6FB3811C953B200842991 /* DKWaypointView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB3011C953B200842991 /* DKWaypointView.m */; };
+		DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD6FB3111C953B200842991 /* DKWaypointAccruacyIndicator.h */; };
+		DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */; };
+		DDD6FB7411C9571B00842991 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6FB7311C9571B00842991 /* pin.png */; };
 		DDED24731178085C00DAD7DB /* libDirectionKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CF8E911720A330028A53F /* libDirectionKit.a */; };
+		DDF92E8C11C91D35006F0D97 /* DKWaypointDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +128,19 @@
 		DDD4E98911C7C07B0030CF5B /* DKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLocation.h; path = include/DirectionKit/DKLocation.h; sourceTree = "<group>"; };
 		DDD4E98A11C7C07B0030CF5B /* DKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKLocation.m; path = include/DirectionKit/DKLocation.m; sourceTree = "<group>"; };
 		DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDelegate.h; path = include/DirectionKit/DKDelegate.h; sourceTree = "<group>"; };
+		DDD6FA9111C931AE00842991 /* DemoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDetailViewController.h; sourceTree = "<group>"; };
+		DDD6FA9211C931AE00842991 /* DemoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoDetailViewController.m; sourceTree = "<group>"; };
+		DDD6FA9311C931AE00842991 /* DemoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoDetailViewController.xib; sourceTree = "<group>"; };
+		DDD6FB2B11C953B200842991 /* DKMapViewCurrentLocationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMapViewCurrentLocationMarker.h; path = include/DirectionKit/DKMapViewCurrentLocationMarker.h; sourceTree = "<group>"; };
+		DDD6FB2C11C953B200842991 /* DKMapViewCurrentLocationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMapViewCurrentLocationMarker.m; path = include/DirectionKit/DKMapViewCurrentLocationMarker.m; sourceTree = "<group>"; };
+		DDD6FB2D11C953B200842991 /* DKCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCalloutView.h; path = include/DirectionKit/DKCalloutView.h; sourceTree = "<group>"; };
+		DDD6FB2E11C953B200842991 /* DKCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCalloutView.m; path = include/DirectionKit/DKCalloutView.m; sourceTree = "<group>"; };
+		DDD6FB2F11C953B200842991 /* DKWaypointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointView.h; path = include/DirectionKit/DKWaypointView.h; sourceTree = "<group>"; };
+		DDD6FB3011C953B200842991 /* DKWaypointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypointView.m; path = include/DirectionKit/DKWaypointView.m; sourceTree = "<group>"; };
+		DDD6FB3111C953B200842991 /* DKWaypointAccruacyIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointAccruacyIndicator.h; path = include/DirectionKit/DKWaypointAccruacyIndicator.h; sourceTree = "<group>"; };
+		DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypointAccruacyIndicator.m; path = include/DirectionKit/DKWaypointAccruacyIndicator.m; sourceTree = "<group>"; };
+		DDD6FB7311C9571B00842991 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointDelegate.h; path = include/DirectionKit/DKWaypointDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +175,9 @@
 				1D3623250D0F684500981E51 /* DemoAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* DemoViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* DemoViewController.m */,
+				DDD6FA9111C931AE00842991 /* DemoDetailViewController.h */,
+				DDD6FA9211C931AE00842991 /* DemoDetailViewController.m */,
+				DDD6FA9311C931AE00842991 /* DemoDetailViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -188,6 +216,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDD6FB7311C9571B00842991 /* pin.png */,
 				2899E5210DE3E06400AC0155 /* DemoViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* DirectionKit-Info.plist */,
@@ -254,6 +283,10 @@
 		DD7CF92311720D8B0028A53F /* DirectionKit Framework */ = {
 			isa = PBXGroup;
 			children = (
+				DDD6FB2B11C953B200842991 /* DKMapViewCurrentLocationMarker.h */,
+				DDD6FB2C11C953B200842991 /* DKMapViewCurrentLocationMarker.m */,
+				DDD6FB2D11C953B200842991 /* DKCalloutView.h */,
+				DDD6FB2E11C953B200842991 /* DKCalloutView.m */,
 				DD7CFA3611721D890028A53F /* DirectionKit.h */,
 				DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */,
 				DD10CC8E11C6C9E0004874F4 /* DKMapView.h */,
@@ -269,8 +302,13 @@
 				DD10C97311C6A1DC004874F4 /* DKLeg.m */,
 				DD10C96E11C6A1CB004874F4 /* DKStep.h */,
 				DD10C96F11C6A1CB004874F4 /* DKStep.m */,
+				DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */,
 				DD10CC2211C6C577004874F4 /* DKWaypoint.h */,
 				DD10CC2311C6C577004874F4 /* DKWaypoint.m */,
+				DDD6FB2F11C953B200842991 /* DKWaypointView.h */,
+				DDD6FB3011C953B200842991 /* DKWaypointView.m */,
+				DDD6FB3111C953B200842991 /* DKWaypointAccruacyIndicator.h */,
+				DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */,
 				DDD4E98911C7C07B0030CF5B /* DKLocation.h */,
 				DDD4E98A11C7C07B0030CF5B /* DKLocation.m */,
 			);
@@ -296,6 +334,11 @@
 				DDD4E97411C7BD4B0030CF5B /* DKRouteView.h in Headers */,
 				DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */,
 				DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */,
+				DDF92E8C11C91D35006F0D97 /* DKWaypointDelegate.h in Headers */,
+				DDD6FB3311C953B200842991 /* DKMapViewCurrentLocationMarker.h in Headers */,
+				DDD6FB3511C953B200842991 /* DKCalloutView.h in Headers */,
+				DDD6FB3711C953B200842991 /* DKWaypointView.h in Headers */,
+				DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +405,8 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* DemoViewController.xib in Resources */,
+				DDD6FA9511C931AE00842991 /* DemoDetailViewController.xib in Resources */,
+				DDD6FB7411C9571B00842991 /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +430,7 @@
 				DD10C9CE11C6A2F8004874F4 /* CJSONScanner.m in Sources */,
 				DD10C9CF11C6A2F8004874F4 /* CJSONSerializer.m in Sources */,
 				DD10C9D011C6A2F8004874F4 /* CSerializedJSONData.m in Sources */,
+				DDD6FA9411C931AE00842991 /* DemoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +446,10 @@
 				DD10CC9111C6C9E0004874F4 /* DKMapView.m in Sources */,
 				DDD4E97511C7BD4B0030CF5B /* DKRouteView.m in Sources */,
 				DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */,
+				DDD6FB3411C953B200842991 /* DKMapViewCurrentLocationMarker.m in Sources */,
+				DDD6FB3611C953B200842991 /* DKCalloutView.m in Sources */,
+				DDD6FB3811C953B200842991 /* DKWaypointView.m in Sources */,
+				DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +480,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = DirectionKit;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -444,7 +494,7 @@
 				GCC_PREFIX_HEADER = DirectionKit_Prefix.pch;
 				INFOPLIST_FILE = "DirectionKit-Info.plist";
 				PRODUCT_NAME = DirectionKit;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -459,7 +509,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -487,7 +537,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PREBINDING = NO;
 				PRODUCT_NAME = DirectionKit;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -500,6 +550,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = DirectionKitMobile;
+				SDKROOT = iphoneos4.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;

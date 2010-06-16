@@ -36,6 +36,8 @@
 		// Make the route layer transparent.
 		[self setBackgroundColor:[UIColor clearColor]];
 		
+		self.multipleTouchEnabled = NO;
+		
 		// Keep the map and route.
 		_map = [map retain];
 		_route = [route retain];
@@ -84,7 +86,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-	// only draw our lines if we're not int he moddie of a transition and we 
+	// only draw our lines if we're not in the moddie of a transition and we 
 	// acutally have some points to draw. 
 	if(self.hidden || _route == nil) return; 
 	

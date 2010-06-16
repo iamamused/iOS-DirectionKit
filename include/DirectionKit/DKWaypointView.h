@@ -1,5 +1,5 @@
 //
-//  DKLocation.h
+//  DKMapViewMarker.h
 //  DirectionKit
 //
 //  The MIT License
@@ -27,12 +27,40 @@
 
 #import <DirectionKit/DirectionKit.h>
 
-@interface DKLocation : NSObject {
-	double latitude;
-	double longitude;
+@class DKMapView;
+
+@interface DKWaypointView : UIView {
+	CLLocationCoordinate2D latlng;
+	NSString *label;
+	DKMapView *controller;
+	BOOL allowAnimation;
+	
+@private
+	MKMapPoint	_position;
+	CGFloat _width;
+	CGFloat _height;
 }
 
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
+@property (assign) CLLocationCoordinate2D latlng;
+@property (assign) MKMapPoint position;
+@property (assign, readonly) float sortIndex;
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic, retain) DKMapView *controller;
+
+@property (assign) BOOL allowAnimation;
+
++ (id)markerFromLatLng:(CLLocationCoordinate2D)latlng withAccuracy:(float)accuracy;
+
+- (void)setPosition:(MKMapPoint)position animated:(BOOL)animated delay:(float)delay;
+- (CGPoint)anchorPoint;
+
+- (void)openInfoWindow;
+- (CGPoint)infoWindowAnchorPoint;
+
+- (UIImage *)iconImage;
+- (CGPoint)infoWindowAnchorPoint;
+
+- (void)bounce:(float)pause;
+- (void)drop:(float)pause;
 
 @end
