@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import "DirectionKit.h"
 
 
 @protocol DKDelegate

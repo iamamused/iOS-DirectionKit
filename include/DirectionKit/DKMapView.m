@@ -27,6 +27,8 @@
 
 #import "DKMapView.h"
 
+@interface DKMapView (PrivateMethods)
+@end
 
 @implementation DKMapView
 
@@ -39,12 +41,12 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if ( self = [super initWithFrame:frame] ) {
-    	self.multipleTouchEnabled = true;
+    	self.multipleTouchEnabled = YES;
+		self.showsUserLocation = YES;
 		[self setDelegate:self];
 	}
     return self;
 }
-
 
 
 #pragma mark -
@@ -83,10 +85,31 @@
 	
 	[self zoomToWaypoints:waypoints];
 	
+	if (routeControl != nil) {
+		[routeControl removeFromSuperview];
+		[routeControl release];
+		routeControl = nil;
+	}
+	routeControl = [[DKWaypointControl alloc] initWithRoute:route map:self];
+	
+	
 }
 
 #pragma mark -
 #pragma mark Map Interaction
+
+- (void)centerOnWaypointIndex:(int)index;
+{
+	NSArray *waypoints = [[routes objectAtIndex:0] waypoints];
+	[self centerOnWaypoint:[waypoints objectAtIndex:index]];
+}
+
+- (void)centerOnWaypoint:(DKWaypoint *)waypoint;
+{
+	[self setCenterCoordinate:waypoint.coordinate animated:YES];
+	[self selectAnnotation:waypoint animated:YES];
+}
+
 - (void)zoomToWaypoints:(NSArray *)waypoints;
 {
 	
@@ -163,7 +186,7 @@
 
 #pragma mark -
 #pragma mark Touch Interaction
-
+/*
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 	return [super hitTest:point withEvent:event];
 	
@@ -180,7 +203,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
 {
-	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     //[map touchesBegan:touches withEvent:event];
     [super touchesBegan:touches withEvent:event];
@@ -188,19 +210,18 @@
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     [map touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	[routePoly setNeedsDisplay];
     //NSLog(@"%s", __FUNCTION__);
     //[map touchesEnded:touches withEvent:event];
     [super touchesEnded:touches withEvent:event];
 }
-				  
+	*/
+
 - (void)dealloc {
 	[directions release];
 	[routes release];

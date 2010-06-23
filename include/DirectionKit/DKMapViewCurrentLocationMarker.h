@@ -25,8 +25,9 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "DKWaypointView.h"
+#import "DirectionKit.h"
+
+@class DKWaypointView;
 
 @interface DKMapViewCurrentLocationMarker : DKWaypointView {
 

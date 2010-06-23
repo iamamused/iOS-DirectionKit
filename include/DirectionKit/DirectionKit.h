@@ -36,9 +36,10 @@
 #import "DKLocation.h"
 #import "DKGoogleDirections.h"
 #import "DKWaypoint.h"
+#import "DKWaypointControl.h"
 #import "DKStep.h"
 #import "DKLeg.h"
 #import "DKRoute.h"
 #import "DKMapView.h"
-#import "DKRouteView.h"
+#import "DKWaypointView.h"
 

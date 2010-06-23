@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import "DirectionKit.h"
 
 @class DKMapView;
 @class DKWaypoint;
@@ -37,6 +37,9 @@
 	int position;
 	
 	id<DKWaypointDelegate> delegate;
+	
+	// info
+	NSDictionary *info;
 }
 
 @property (nonatomic, assign) id<DKWaypointDelegate> delegate;
@@ -47,9 +50,12 @@
 
 @property (nonatomic, assign) int position;
 
+@property (nonatomic, retain) NSDictionary *info;
+
+
 + (DKWaypoint *)waypointWithLatitude:(float)lat Longitude:(float)lng;
 
-- (UIView *)pinViewForMap:(DKMapView *)map; 
+- (MKAnnotationView *)pinViewForMap:(DKMapView *)map; 
 
 - (void)showDetails:(id)sender;
 

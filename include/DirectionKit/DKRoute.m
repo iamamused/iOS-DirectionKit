@@ -27,6 +27,10 @@
 
 #import "DKRoute.h"
 
+@interface DKRoute (PrivateMethods)
+- (NSArray *)_decodePoly:(NSString *)encoded;
+@end
+
 @implementation DKRoute
 
 @synthesize summary;
@@ -70,7 +74,7 @@
 
 - (MKPolyline *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;
 {
-	NSMutableArray *poly;
+	NSArray *poly;
 	switch (accuracy) {
 		default:
 		case kDKRouteAccuracyOverview:
@@ -81,7 +85,7 @@
 			for (DKLeg *leg in legs) {
 				for (DKStep *step in leg.steps) {
 					NSArray *decoded = [self _decodePoly:[step.polyline objectForKey:@"points"]];
-					[poly addObjectsFromArray:decoded];
+					[(NSMutableArray *)poly addObjectsFromArray:decoded];
 				}		
 			}
 			break;

@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import "DirectionKit.h"
 
 
 @interface DKLeg : NSObject {

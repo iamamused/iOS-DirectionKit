@@ -41,9 +41,9 @@
 		DD7CFA0911721C4B0028A53F /* DirectionKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* DirectionKit_Prefix.pch */; };
 		DD7CFA0D11721CC20028A53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		DD7CFA3711721D890028A53F /* DirectionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7CFA3611721D890028A53F /* DirectionKit.h */; };
+		DDC1922611CA57CD00DD6C89 /* DKWaypointControl.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */; };
+		DDC1922711CA57CD00DD6C89 /* DKWaypointControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */; };
 		DDD4E8F311C7B7760030CF5B /* DKDirectionsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */; };
-		DDD4E97411C7BD4B0030CF5B /* DKRouteView.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */; };
-		DDD4E97511C7BD4B0030CF5B /* DKRouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */; };
 		DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E98911C7C07B0030CF5B /* DKLocation.h */; };
 		DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E98A11C7C07B0030CF5B /* DKLocation.m */; };
 		DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */; };
@@ -58,16 +58,16 @@
 		DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD6FB3111C953B200842991 /* DKWaypointAccruacyIndicator.h */; };
 		DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */; };
 		DDD6FB7411C9571B00842991 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6FB7311C9571B00842991 /* pin.png */; };
-		DDED24731178085C00DAD7DB /* libDirectionKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CF8E911720A330028A53F /* libDirectionKit.a */; };
+		DDE1DE2D11D2529C00BD6454 /* libDirectionKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CF8E911720A330028A53F /* libDirectionKitMobile.a */; };
 		DDF92E8C11C91D35006F0D97 /* DKWaypointDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DD7CFCBC11725E980028A53F /* PBXContainerItemProxy */ = {
+		DDE1DE2E11D252A600BD6454 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD7CF8E811720A330028A53F;
+			remoteGlobalIDString = DD7CF8E811720A330028A53F /* DirectionKitMobile */;
 			remoteInfo = DirectionKitMobile;
 		};
 /* End PBXContainerItemProxy section */
@@ -119,12 +119,12 @@
 		DD10CC2311C6C577004874F4 /* DKWaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypoint.m; path = include/DirectionKit/DKWaypoint.m; sourceTree = "<group>"; };
 		DD10CC8E11C6C9E0004874F4 /* DKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMapView.h; path = include/DirectionKit/DKMapView.h; sourceTree = "<group>"; };
 		DD10CC8F11C6C9E0004874F4 /* DKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMapView.m; path = include/DirectionKit/DKMapView.m; sourceTree = "<group>"; };
-		DD7CF8E911720A330028A53F /* libDirectionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDirectionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7CF8E911720A330028A53F /* libDirectionKitMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDirectionKitMobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7CF970117211070028A53F /* DirectionKit.framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DirectionKit.framework-Info.plist"; sourceTree = "<group>"; };
 		DD7CFA3611721D890028A53F /* DirectionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionKit.h; path = include/DirectionKit/DirectionKit.h; sourceTree = "<group>"; };
+		DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointControl.h; path = include/DirectionKit/DKWaypointControl.h; sourceTree = "<group>"; };
+		DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypointControl.m; path = include/DirectionKit/DKWaypointControl.m; sourceTree = "<group>"; };
 		DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDirectionsDelegate.h; path = include/DirectionKit/DKDirectionsDelegate.h; sourceTree = "<group>"; };
-		DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKRouteView.h; path = include/DirectionKit/DKRouteView.h; sourceTree = "<group>"; };
-		DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRouteView.m; path = include/DirectionKit/DKRouteView.m; sourceTree = "<group>"; };
 		DDD4E98911C7C07B0030CF5B /* DKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLocation.h; path = include/DirectionKit/DKLocation.h; sourceTree = "<group>"; };
 		DDD4E98A11C7C07B0030CF5B /* DKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKLocation.m; path = include/DirectionKit/DKLocation.m; sourceTree = "<group>"; };
 		DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDelegate.h; path = include/DirectionKit/DKDelegate.h; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDED24731178085C00DAD7DB /* libDirectionKit.a in Frameworks */,
+				DDE1DE2D11D2529C00BD6454 /* libDirectionKitMobile.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -186,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* DirectionKit.app */,
-				DD7CF8E911720A330028A53F /* libDirectionKit.a */,
+				DD7CF8E911720A330028A53F /* libDirectionKitMobile.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,11 +283,13 @@
 		DD7CF92311720D8B0028A53F /* DirectionKit Framework */ = {
 			isa = PBXGroup;
 			children = (
+				DD7CFA3611721D890028A53F /* DirectionKit.h */,
+				DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */,
+				DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */,
 				DDD6FB2B11C953B200842991 /* DKMapViewCurrentLocationMarker.h */,
 				DDD6FB2C11C953B200842991 /* DKMapViewCurrentLocationMarker.m */,
 				DDD6FB2D11C953B200842991 /* DKCalloutView.h */,
 				DDD6FB2E11C953B200842991 /* DKCalloutView.m */,
-				DD7CFA3611721D890028A53F /* DirectionKit.h */,
 				DDD4EC7C11C7FF0B0030CF5B /* DKDelegate.h */,
 				DD10CC8E11C6C9E0004874F4 /* DKMapView.h */,
 				DD10CC8F11C6C9E0004874F4 /* DKMapView.m */,
@@ -296,8 +298,6 @@
 				DD10C91911C6A04A004874F4 /* DKGoogleDirections.m */,
 				DD10C96A11C6A1B2004874F4 /* DKRoute.h */,
 				DD10C96B11C6A1B2004874F4 /* DKRoute.m */,
-				DDD4E97211C7BD4B0030CF5B /* DKRouteView.h */,
-				DDD4E97311C7BD4B0030CF5B /* DKRouteView.m */,
 				DD10C97211C6A1DC004874F4 /* DKLeg.h */,
 				DD10C97311C6A1DC004874F4 /* DKLeg.m */,
 				DD10C96E11C6A1CB004874F4 /* DKStep.h */,
@@ -331,7 +331,6 @@
 				DD10CC2411C6C577004874F4 /* DKWaypoint.h in Headers */,
 				DD10CC9011C6C9E0004874F4 /* DKMapView.h in Headers */,
 				DDD4E8F311C7B7760030CF5B /* DKDirectionsDelegate.h in Headers */,
-				DDD4E97411C7BD4B0030CF5B /* DKRouteView.h in Headers */,
 				DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */,
 				DDD4EC7D11C7FF0B0030CF5B /* DKDelegate.h in Headers */,
 				DDF92E8C11C91D35006F0D97 /* DKWaypointDelegate.h in Headers */,
@@ -339,6 +338,7 @@
 				DDD6FB3511C953B200842991 /* DKCalloutView.h in Headers */,
 				DDD6FB3711C953B200842991 /* DKWaypointView.h in Headers */,
 				DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */,
+				DDC1922611CA57CD00DD6C89 /* DKWaypointControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +356,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DD7CFCBD11725E980028A53F /* PBXTargetDependency */,
+				DDE1DE2F11D252A600BD6454 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = DirectionKit;
@@ -377,7 +377,7 @@
 			);
 			name = DirectionKitMobile;
 			productName = DirectionKitMobile;
-			productReference = DD7CF8E911720A330028A53F /* libDirectionKit.a */;
+			productReference = DD7CF8E911720A330028A53F /* libDirectionKitMobile.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -444,22 +444,22 @@
 				DD10C97511C6A1DC004874F4 /* DKLeg.m in Sources */,
 				DD10CC2511C6C577004874F4 /* DKWaypoint.m in Sources */,
 				DD10CC9111C6C9E0004874F4 /* DKMapView.m in Sources */,
-				DDD4E97511C7BD4B0030CF5B /* DKRouteView.m in Sources */,
 				DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */,
 				DDD6FB3411C953B200842991 /* DKMapViewCurrentLocationMarker.m in Sources */,
 				DDD6FB3611C953B200842991 /* DKCalloutView.m in Sources */,
 				DDD6FB3811C953B200842991 /* DKWaypointView.m in Sources */,
 				DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */,
+				DDC1922711CA57CD00DD6C89 /* DKWaypointControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DD7CFCBD11725E980028A53F /* PBXTargetDependency */ = {
+		DDE1DE2F11D252A600BD6454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DD7CF8E811720A330028A53F /* DirectionKitMobile */;
-			targetProxy = DD7CFCBC11725E980028A53F /* PBXContainerItemProxy */;
+			targetProxy = DDE1DE2E11D252A600BD6454 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,6 +475,7 @@
 				GCC_PREFIX_HEADER = DirectionKit_Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/include/\"";
 				INFOPLIST_FILE = "DirectionKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -492,7 +493,13 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DirectionKit_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/include/\"";
 				INFOPLIST_FILE = "DirectionKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = DirectionKit;
 				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -536,7 +543,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PREBINDING = NO;
-				PRODUCT_NAME = DirectionKit;
+				PRODUCT_NAME = DirectionKitMobile;
 				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;

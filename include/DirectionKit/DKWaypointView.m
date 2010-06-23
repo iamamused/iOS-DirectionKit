@@ -135,7 +135,7 @@
 }
 
 - (void)openInfoWindow {
-	[controller openInfoWindow:self];
+	//[controller openInfoWindow:self];
 }
 
 - (float)sortIndex {

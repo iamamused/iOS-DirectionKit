@@ -25,8 +25,12 @@
 //  THE SOFTWARE.
 //
 
-#import <DirectionKit/DirectionKit.h>
+#import "DirectionKit.h"
 #import "CJSONDeserializer.h"
+
+@interface DKGoogleDirections (PrivateMethods)
+-(void) doRegistration:(NSURL *)url;
+@end
 
 @implementation DKGoogleDirections
 
