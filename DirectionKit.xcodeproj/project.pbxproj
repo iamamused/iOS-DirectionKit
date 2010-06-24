@@ -67,7 +67,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD7CF8E811720A330028A53F /* DirectionKitMobile */;
+			remoteGlobalIDString = DD7CF8E811720A330028A53F;
 			remoteInfo = DirectionKitMobile;
 		};
 /* End PBXContainerItemProxy section */

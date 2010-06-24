@@ -63,8 +63,15 @@
 
 - (void)didFinishWithRoutes:(NSArray *)newRoutes;
 {
+	[routes release];
+	routes = nil;
+	
+	if (newRoutes == nil) return;
+	
 	routes = [newRoutes retain];
-	[self showRoute:[routes objectAtIndex:0]];
+	if ([routes count] > 0) {
+		[self showRoute:[routes objectAtIndex:0]];
+	}
 }
 
 
