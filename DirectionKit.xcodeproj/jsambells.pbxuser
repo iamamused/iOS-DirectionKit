@@ -35,7 +35,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = DD10C85611C680B1004874F4 /* Demo */;
 		activeSDKPreference = iphonesimulator4.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Demo */;
@@ -274,17 +274,17 @@
 	};
 	DD10C91811C6A04A004874F4 /* DKGoogleDirections.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {750, 697}}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 697}}";
 			sepNavSelRange = "{1249, 0}";
-			sepNavVisRange = "{0, 1383}";
+			sepNavVisRange = "{526, 856}";
 			sepNavWindowFrame = "{{15, 257}, {1828, 916}}";
 		};
 	};
 	DD10C91911C6A04A004874F4 /* DKGoogleDirections.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1036, 2567}}";
+			sepNavIntBoundsRect = "{{0, 0}, {908, 2720}}";
 			sepNavSelRange = "{1234, 0}";
-			sepNavVisRange = "{4389, 416}";
+			sepNavVisRange = "{4388, 417}";
 		};
 	};
 	DD10C96A11C6A1B2004874F4 /* DKRoute.h */ = {
@@ -434,14 +434,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {892, 867}}";
 			sepNavSelRange = "{1236, 0}";
-			sepNavVisRange = "{114, 1665}";
+			sepNavVisRange = "{1190, 589}";
 		};
 	};
 	DD10CC8F11C6C9E0004874F4 /* DKMapView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 4080}}";
-			sepNavSelRange = "{5158, 13}";
-			sepNavVisRange = "{1600, 507}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 4165}}";
+			sepNavSelRange = "{2174, 17}";
+			sepNavVisRange = "{2028, 463}";
 		};
 	};
 	DD10CCCA11C6CCDF004874F4 /* PBXTextBookmark */ = {
@@ -640,16 +640,16 @@
 	};
 	DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1043, 525}}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 408}}";
 			sepNavSelRange = "{283, 3}";
-			sepNavVisRange = "{0, 379}";
+			sepNavVisRange = "{3, 376}";
 		};
 	};
 	DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1043, 1921}}";
-			sepNavSelRange = "{1359, 21}";
-			sepNavVisRange = "{1125, 675}";
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 1768}}";
+			sepNavSelRange = "{595, 0}";
+			sepNavVisRange = "{279, 734}";
 		};
 	};
 	DDC1947811CA6A7A00DD6C89 /* PBXTextBookmark */ = {
@@ -809,7 +809,7 @@
 		fRef = DD10CC8F11C6C9E0004874F4 /* DKMapView.m */;
 		name = "DKMapView.m: 188";
 		rLen = 13;
-		rLoc = 5160;
+		rLoc = 5283;
 		rType = 0;
 		vrLen = 1128;
 		vrLoc = 4418;
@@ -1152,7 +1152,7 @@
 		fRef = DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */;
 		name = "DKWaypointControl.m: 33";
 		rLen = 2;
-		rLoc = 829;
+		rLoc = 861;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 0;

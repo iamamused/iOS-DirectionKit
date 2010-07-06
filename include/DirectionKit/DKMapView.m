@@ -54,6 +54,7 @@
 
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
 {
+	[directions release];
 	directions = [[DKGoogleDirections alloc] initWithDelegate:self];
 	[directions loadDirectionsThroughWaypoints:waypoints];
 }
@@ -77,6 +78,11 @@
 
 #pragma mark -
 #pragma mark Routing
+
+- (void)hideRoute {
+	[self removeOverlay:routePoly];
+	[self removeAnnotations:self.annotations];
+}
 
 - (void)showRoute:(DKRoute *)route {
 	if (routePoly != nil) {
