@@ -71,36 +71,39 @@ int kDKWaypointPinDescenderWidth = 12;
 	if (!pinView) {
 		
 		// If an existing pin view was not available, create one
-		MKAnnotationView* view = [[[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:WaypointAnnotationIdentifier] autorelease];
+		pinView = [[[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:WaypointAnnotationIdentifier] autorelease];
 
-		//view.animatesDrop = YES;
-		view.canShowCallout = YES;
-
-		view.image = [self pinWithRect:CGRectMake(0, 0, 36, 44) label:[NSString stringWithFormat:@"%c", 63 + position]];
-		view.centerOffset = CGPointMake(0, -22);
-		view.opaque = NO;
 		
-		
-		if (delegate != nil) {
-			
-			// add a detail disclosure button to the callout which will open a new view controller page
-            //
-            // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
-            //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
-            //
-			
-			UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-			[rightButton addTarget:self
-							action:@selector(showDetails:)
-				  forControlEvents:UIControlEventTouchUpInside];
-			
-			view.rightCalloutAccessoryView = rightButton;
-		}
-		
-		return view;
-		
+	} 
+	
+	//view.animatesDrop = YES;
+	pinView.canShowCallout = YES;
+	NSString *pinLabel;
+	if (position == 1) {
+		pinLabel= @"S";
 	} else {
-		pinView.annotation = self;
+		pinLabel= [NSString stringWithFormat:@"%c", 63 + position];
+	}
+	pinView.image = [self pinWithRect:CGRectMake(0, 0, 36, 44) label:pinLabel];
+	pinView.centerOffset = CGPointMake(0, -22);
+	pinView.opaque = NO;
+	
+	pinView.annotation = self;
+
+	if (delegate != nil) {
+		
+		// add a detail disclosure button to the callout which will open a new view controller page
+		//
+		// note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+		//  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+		//
+		
+		UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+		[rightButton addTarget:self
+						action:@selector(showDetails:)
+			  forControlEvents:UIControlEventTouchUpInside];
+		
+		pinView.rightCalloutAccessoryView = rightButton;
 	}
 	
 	return pinView;

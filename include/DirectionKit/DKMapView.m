@@ -114,6 +114,7 @@
 - (void)centerOnWaypoint:(DKWaypoint *)waypoint;
 {
 	[self setCenterCoordinate:waypoint.coordinate animated:YES];
+	
 	[self selectAnnotation:waypoint animated:YES];
 }
 

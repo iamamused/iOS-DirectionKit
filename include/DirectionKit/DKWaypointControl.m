@@ -18,13 +18,11 @@
 	if (self = [super init]) {
 
 		_map = [map retain];
-
 		
-		self.frame = CGRectMake(0, map.frame.size.height - 60, map.frame.size.width, 48);
+
+		self.frame = CGRectMake(map.frame.origin.x, map.frame.origin.y + map.frame.size.height - 60, map.frame.size.width, 48);
 		self.opaque = NO;
 		self.backgroundColor = [UIColor clearColor];
-		
-		
 		
 		NSMutableArray *items = [NSMutableArray arrayWithCapacity:[route.waypoints count]];
 		[items addObject:@"Start"];
@@ -47,7 +45,7 @@
 		
 		[self addSubview:_control];
 		
-		[_map addSubview:self];
+		[[_map superview] addSubview:self];
 		
 	}
 	
