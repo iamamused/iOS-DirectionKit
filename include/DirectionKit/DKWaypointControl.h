@@ -19,5 +19,6 @@
 }
 
 - (id)initWithRoute:(DKRoute *)route map:(DKMapView *)map;
+- (void)showInterface;
 
 @end

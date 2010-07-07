@@ -34,14 +34,15 @@
 
 - (void)awakeFromNib;
 {
-	//self.multipleTouchEnabled = true;
+	//self.multipleTouchEnabled = YES;
+	self.showsUserLocation = YES;
 	[self setDelegate:self];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
     if ( self = [super initWithFrame:frame] ) {
-    	self.multipleTouchEnabled = YES;
+    	//self.multipleTouchEnabled = YES;
 		self.showsUserLocation = YES;
 		[self setDelegate:self];
 	}
@@ -200,41 +201,35 @@
 
 #pragma mark -
 #pragma mark Touch Interaction
-/*
+
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+	[routeControl showInterface];
 	return [super hitTest:point withEvent:event];
-	
-    //map = [super hitTest:point withEvent:event];
-    //return self;
 }
 
+/*
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //NSLog(@"%s", __FUNCTION__);
-    //[map touchesCancelled:touches withEvent:event];
 	[super touchesCancelled:touches withEvent:event];
 }
 
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
 {
-    //NSLog(@"%s", __FUNCTION__);
-    //[map touchesBegan:touches withEvent:event];
+	[routeControl showInterface];
     [super touchesBegan:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    //NSLog(@"%s", __FUNCTION__);
     [map touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    //NSLog(@"%s", __FUNCTION__);
-    //[map touchesEnded:touches withEvent:event];
     [super touchesEnded:touches withEvent:event];
 }
-	*/
+*/
 
 - (void)dealloc {
 	[directions release];

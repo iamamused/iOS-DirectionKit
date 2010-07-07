@@ -28,7 +28,6 @@
 #import "DirectionKit.h"
 
 @class DKGoogleDirections;
-@class DKRouteView;
 @class DKWaypointControl;
 
 // http://stackoverflow.com/questions/1121889/intercepting-hijacking-iphone-touch-events-for-mkmapview/1298330
@@ -39,6 +38,9 @@
 	MKPolyline *routePoly;
 	DKWaypointControl *routeControl;
 	NSArray *routes;
+	
+@private
+	
 }
 
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;

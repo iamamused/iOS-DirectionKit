@@ -14,15 +14,14 @@
 - (id)initWithRoute:(DKRoute *)route map:(DKMapView *)map;
 {
 	
-	
 	if (self = [super init]) {
 
 		_map = [map retain];
 		
-
 		self.frame = CGRectMake(map.frame.origin.x, map.frame.origin.y + map.frame.size.height - 60, map.frame.size.width, 48);
 		self.opaque = NO;
 		self.backgroundColor = [UIColor clearColor];
+		self.alpha = 0.0f;
 		
 		NSMutableArray *items = [NSMutableArray arrayWithCapacity:[route.waypoints count]];
 		[items addObject:@"Start"];
@@ -30,8 +29,6 @@
 			//http://stackoverflow.com/questions/2832729/how-to-convert-ascii-value-to-a-character-in-objective-c
 			[items addObject:[NSString stringWithFormat:@"%c", 64+i]];
 		}
-		
-		
 
 		_control = [[UISegmentedControl alloc] initWithItems:items];
 		_control.frame = CGRectMake(10, 10, self.frame.size.width - 20, 30);
@@ -42,16 +39,58 @@
 		[_control addTarget:self
 			action:@selector(valueChanged)
 			forControlEvents:UIControlEventValueChanged];
-		
-		[self addSubview:_control];
-		
-		[[_map superview] addSubview:self];
+
+		[self addSubview:_control];		
 		
 	}
 	
 	return self;
 	
 }
+
+
+- (void)showInterface;
+{
+	if (self.alpha != 1.0f) {
+
+		[[_map superview] addSubview:self];
+		
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.5f];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		[UIView setAnimationDidStopSelector:@selector(_triggerHide)];
+		self.alpha = 1.0f;
+		[UIView commitAnimations];
+		
+	} else {
+		[self _triggerHide];
+	}
+}
+
+- (void)hideInterface;
+{
+	if (self.alpha != 0.0f) {
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.5f];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		[UIView setAnimationDidStopSelector:@selector(_removeControl)];
+		self.alpha = 0.0f;
+		[UIView commitAnimations];
+	}
+	
+}
+
+- (void)_triggerHide;
+{
+	[DKWaypointControl cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideInterface) object:nil];
+	[self performSelector:@selector(hideInterface) withObject:nil afterDelay: 4.45];
+}
+
+- (void)_removeControl;
+{
+	[self removeFromSuperview];
+}
+
 
 - (void)valueChanged {
 	[_map centerOnWaypointIndex:_control.selectedSegmentIndex];
@@ -65,13 +104,13 @@
 	
     CGSize          myShadowOffset = CGSizeMake (0, 5);
     float           myColorValues[] = {0, 0, 0, .85};
-    CGColorSpaceRef myColorSpace = CGColorSpaceCreateDeviceRGB ();
+    CGColorSpaceRef myColorSpace = CGColorSpaceCreateDeviceRGB();
     CGColorRef      myColor = CGColorCreate (myColorSpace, myColorValues);
 	
     CGContextSaveGState(myContext);
     CGContextSetShadow (myContext, myShadowOffset, 10);
 
-    CGContextSetRGBFillColor (myContext, 0, 1, 0, 1);
+    CGContextSetRGBFillColor (myContext, 1, 1, 1, 1);
 	
 	CGRect rrect = CGRectInset(rect, 10, 10);
 	
@@ -91,8 +130,7 @@
     CGColorSpaceRelease (myColorSpace);
 	
     CGContextRestoreGState(myContext);
-	
-	//[super drawRect:rect];
+
 }
 
 - (void)dealloc {
