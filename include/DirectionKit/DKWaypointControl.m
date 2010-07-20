@@ -8,6 +8,10 @@
 
 #import "DKWaypointControl.h"
 
+@interface DKWaypointControl ()
+- (void)_triggerHide;
+@end
+
 
 @implementation DKWaypointControl
 

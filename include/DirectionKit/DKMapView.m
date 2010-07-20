@@ -27,10 +27,25 @@
 
 #import "DKMapView.h"
 
+@interface DKMapView ()
+@property (nonatomic, retain) UIView *map;
+@property (nonatomic, retain) DKGoogleDirections *directions;
+@property (nonatomic, retain) MKPolyline *routePoly;
+@property (nonatomic, retain) DKWaypointControl *routeControl;
+@property (nonatomic, retain) NSArray *routes;
+@end
+
 @interface DKMapView (PrivateMethods)
 @end
 
 @implementation DKMapView
+
+@synthesize map;
+@synthesize directions;
+@synthesize routePoly;
+@synthesize routeControl;
+@synthesize routes;
+
 
 - (void)awakeFromNib;
 {
@@ -55,9 +70,8 @@
 
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
 {
-	[directions release];
-	directions = [[DKGoogleDirections alloc] initWithDelegate:self];
-	[directions loadDirectionsThroughWaypoints:waypoints];
+	self.directions = [[DKGoogleDirections alloc] initWithDelegate:self];
+	[self.directions loadDirectionsThroughWaypoints:waypoints];
 }
 
 #pragma mark -
@@ -65,14 +79,9 @@
 
 - (void)didFinishWithRoutes:(NSArray *)newRoutes;
 {
-	[routes release];
-	routes = nil;
-	
-	if (newRoutes == nil) return;
-	
-	routes = [newRoutes retain];
-	if ([routes count] > 0) {
-		[self showRoute:[routes objectAtIndex:0]];
+	self.routes = newRoutes;
+	if ([self.routes count] > 0) {
+		[self showRoute:[self.routes objectAtIndex:0]];
 	}
 }
 
@@ -90,7 +99,7 @@
 		[self removeOverlay:routePoly];
 		[self removeAnnotations:self.annotations];
 	}
-	routePoly = [[route polylineWithAccuracy:kDKRouteAccuracyFine] retain];
+	self.routePoly = [route polylineWithAccuracy:kDKRouteAccuracyFine];
 	[self addOverlay:routePoly];
 	
 	NSArray *waypoints = [route waypoints];
@@ -99,13 +108,10 @@
 	
 	[self zoomToWaypoints:waypoints];
 	
-	if (routeControl != nil) {
-		[routeControl removeFromSuperview];
-		[routeControl release];
-		routeControl = nil;
+	if (self.routeControl != nil) {
+		[self.routeControl removeFromSuperview];
 	}
-	routeControl = [[DKWaypointControl alloc] initWithRoute:route map:self];
-	
+	self.routeControl = [[[DKWaypointControl alloc] initWithRoute:route map:self] autorelease];	
 	
 }
 
@@ -232,9 +238,11 @@
 */
 
 - (void)dealloc {
+	[map release];
 	[directions release];
 	[routes release];
 	[routePoly release];
+	[routeControl release];
 	[super dealloc];
 }
 				  

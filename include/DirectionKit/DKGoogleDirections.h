@@ -32,6 +32,7 @@
 	NSMutableData *responseData;	
 	id<DKDirectionsDelegate> dirDelegate;
 	NSArray *_wp;
+	NSURLConnection *_connection; 
 }
 
 - (id)initWithDelegate:(id<DKDirectionsDelegate>)delegate;

@@ -35,10 +35,6 @@
 @private
 	DKWaypointView *_marker;
 	DKMapView *_map;
-	CGFloat _width;
-	CGFloat _height;
-	CGFloat _padding;
-	CGFloat _descenderOffset;
 	UILabel *_label;
 	
 }

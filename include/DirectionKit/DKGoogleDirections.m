@@ -106,6 +106,8 @@
 	[responseData release];
 	
 	NSData *jsonData = [jsonString dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+	[jsonString release];
+	
 	NSError *error = nil;
 	NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:&error];
 	
@@ -137,7 +139,7 @@
 	//NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	
 	responseData = [[NSMutableData data] retain];
-	[[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:url] delegate:self];
+	_connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:url] delegate:self];
 	
 	//[pool release];
 	//return;
@@ -145,6 +147,8 @@
 }
 
 - (void)dealloc {
+	[responseData release];
+	[_connection release];
 	[super dealloc];
 }
 @end
