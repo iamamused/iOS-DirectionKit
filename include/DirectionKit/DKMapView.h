@@ -47,7 +47,7 @@
 - (void)centerOnWaypointIndex:(int)index;
 - (void)centerOnWaypoint:(DKWaypoint *)waypoint;
 
-- (void)hideRoute;
+- (void)removeRouteAndAnnotations;
 - (void)showRoute:(DKRoute *)route;
 - (void)zoomToWaypoints:(NSArray *)waypoints;
 

@@ -30,5 +30,7 @@
 
 @protocol DKDirectionsDelegate
 @required
+- (void)didStartWithWaypoints:(NSArray *)waypoints;
+- (void)didBeginDirectionREquest:(NSArray *)waypoints;
 - (void)didFinishWithRoutes:(NSArray *)routes;
 @end

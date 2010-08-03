@@ -77,6 +77,13 @@
 #pragma mark -
 #pragma mark DKDirectionsDelegate
 
+- (void)didStartWithWaypoints:(NSArray *)waypoints;
+{
+	[self removeRouteAndAnnotations];
+	[self addAnnotations:waypoints];
+	[self zoomToWaypoints:waypoints];
+}
+
 - (void)didFinishWithRoutes:(NSArray *)newRoutes;
 {
 	self.routes = newRoutes;
@@ -89,30 +96,18 @@
 #pragma mark -
 #pragma mark Routing
 
-- (void)hideRoute {
+- (void)removeRouteAndAnnotations {
 	[self removeOverlay:routePoly];
 	[self removeAnnotations:self.annotations];
 }
 
 - (void)showRoute:(DKRoute *)route {
-	if (routePoly != nil) {
-		[self removeOverlay:routePoly];
-		[self removeAnnotations:self.annotations];
-	}
 	self.routePoly = [route polylineWithAccuracy:kDKRouteAccuracyFine];
-	[self addOverlay:routePoly];
-	
-	NSArray *waypoints = [route waypoints];
-
-	[self addAnnotations:waypoints];
-	
-	[self zoomToWaypoints:waypoints];
-	
+	[self addOverlay:routePoly];		
 	if (self.routeControl != nil) {
 		[self.routeControl removeFromSuperview];
 	}
 	self.routeControl = [[[DKWaypointControl alloc] initWithRoute:route map:self] autorelease];	
-	
 }
 
 #pragma mark -

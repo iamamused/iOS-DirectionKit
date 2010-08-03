@@ -83,7 +83,6 @@ int kInfoWindowDescenderHeight = 14;
 }
 
 - (void)showInfo {
-	////NSLog(@"Info");
 }
 
 - (void)updatePosition {

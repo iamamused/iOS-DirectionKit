@@ -50,6 +50,7 @@ int kDKWaypointPinDescenderWidth = 12;
 @synthesize delegate;
 @synthesize coordinate, position;
 @synthesize title, subtitle;
+@synthesize hideDetails;
 
 @synthesize info;
 
@@ -69,11 +70,8 @@ int kDKWaypointPinDescenderWidth = 12;
 	[map dequeueReusableAnnotationViewWithIdentifier:WaypointAnnotationIdentifier];
 	
 	if (!pinView) {
-		
 		// If an existing pin view was not available, create one
 		pinView = [[[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:WaypointAnnotationIdentifier] autorelease];
-
-		
 	} 
 	
 	//view.animatesDrop = YES;
@@ -90,7 +88,7 @@ int kDKWaypointPinDescenderWidth = 12;
 	
 	pinView.annotation = self;
 
-	if (delegate != nil) {
+	if (delegate != nil && hideDetails != YES) {
 		
 		// add a detail disclosure button to the callout which will open a new view controller page
 		//
@@ -111,7 +109,7 @@ int kDKWaypointPinDescenderWidth = 12;
 
 - (void)showDetails:(id)sender;
 {	
-	if (delegate) {
+	if (delegate && !hideDetails) {
 		[delegate waypointShowDetails:self];
 	}
 }

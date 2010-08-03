@@ -38,6 +38,8 @@
 	
 	id<DKWaypointDelegate> delegate;
 	
+	BOOL hideDetails;
+	
 	// info
 	NSDictionary *info;
 }
@@ -51,6 +53,8 @@
 @property (nonatomic, assign) int position;
 
 @property (nonatomic, retain) NSDictionary *info;
+
+@property (nonatomic, assign) BOOL hideDetails;
 
 
 + (DKWaypoint *)waypointWithLatitude:(float)lat Longitude:(float)lng;

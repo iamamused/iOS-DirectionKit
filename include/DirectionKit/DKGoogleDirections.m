@@ -45,6 +45,8 @@
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
 {
 	
+	[dirDelegate didStartWithWaypoints:waypoints];
+
 	// position the waypoints.
 	int pos = 0;
 	for (DKWaypoint *wp in waypoints) {
