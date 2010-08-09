@@ -37,13 +37,14 @@
 		_control = [[UISegmentedControl alloc] initWithItems:items];
 		_control.frame = CGRectMake(10, 10, self.frame.size.width - 20, 30);
 		_control.segmentedControlStyle = UISegmentedControlStyleBar;
-		_control.selectedSegmentIndex = 0;
+		_control.selectedSegmentIndex = UISegmentedControlNoSegment;
 		_control.tintColor = [UIColor blueColor];
-				
+		_control.momentary = YES;
+		
 		[_control addTarget:self
-			action:@selector(valueChanged)
+					 action:@selector(valueChanged:)
 			forControlEvents:UIControlEventValueChanged];
-
+		
 		[self addSubview:_control];		
 		
 	}
@@ -96,7 +97,7 @@
 }
 
 
-- (void)valueChanged {
+- (void)valueChanged:(id)sender {
 	[_map centerOnWaypointIndex:_control.selectedSegmentIndex];
 }
 

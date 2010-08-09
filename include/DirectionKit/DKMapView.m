@@ -123,6 +123,7 @@
 
 - (void)centerOnWaypointIndex:(int)index;
 {
+	
 	NSArray *waypoints = [[routes objectAtIndex:0] waypoints];
 	[self centerOnWaypoint:[waypoints objectAtIndex:index]];
 }
