@@ -70,8 +70,18 @@
 
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
 {
+	if (self.directions != nil) {
+		[self.directions cancel];
+		self.directions = nil;
+	}
+
+	[self removeRouteAndAnnotations];
+	[self addAnnotations:waypoints];
+	[self zoomToWaypoints:waypoints];
+	
 	self.directions = [[DKGoogleDirections alloc] initWithDelegate:self];
 	[self.directions loadDirectionsThroughWaypoints:waypoints];
+
 }
 
 #pragma mark -
@@ -79,9 +89,7 @@
 
 - (void)didStartWithWaypoints:(NSArray *)waypoints;
 {
-	[self removeRouteAndAnnotations];
-	[self addAnnotations:waypoints];
-	[self zoomToWaypoints:waypoints];
+
 }
 
 - (void)didFinishWithRoutes:(NSArray *)newRoutes;

@@ -37,6 +37,7 @@
 - (id)initWithDelegate:(id<DKDirectionsDelegate>)delegate;
 {
 	if (self = [super init]) {
+		_cancelled = NO;
 		dirDelegate = delegate;
 	}
 	return self;
@@ -103,6 +104,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	[connection release];
+	_connection = nil;
 	
 	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	[responseData release];
@@ -116,7 +118,7 @@
 	
 	NSMutableArray *routes = [NSMutableArray array];
 	
-	if ([[dictionary objectForKey:@"status"] isEqualToString:@"OK"]) {
+	if ( !_cancelled && [[dictionary objectForKey:@"status"] isEqualToString:@"OK"]) {
 		NSArray *dkRoutes = [dictionary objectForKey:@"routes"];
 		for (NSDictionary *routeDict in dkRoutes) {
 			DKRoute *route = [[DKRoute alloc] initWithDict:routeDict];
@@ -126,7 +128,8 @@
 		}
 	}
 	
-	[dirDelegate didFinishWithRoutes:routes];
+	if (!_cancelled) [dirDelegate didFinishWithRoutes:routes];
+	
 	[_wp release];
 	
 }
@@ -136,16 +139,25 @@
 #pragma mark TouchXML Parsing
 
 -(void) doRegistration:(NSURL *)url {
-		
+	
+	if (_cancelled) return;
+	
 	NSLog(@"Google Directions API: %@", url);
-	//NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	
 	responseData = [[NSMutableData data] retain];
 	_connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:url] delegate:self];
 	
-	//[pool release];
-	//return;
 	
+}
+
+#pragma mark -
+#pragma mark Cancelling
+- (void)cancel;
+{
+	if (_connection != nil) {
+		[_connection cancel];
+	}
+	_cancelled = YES;
 }
 
 - (void)dealloc {

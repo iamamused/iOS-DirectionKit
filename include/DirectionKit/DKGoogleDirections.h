@@ -32,10 +32,12 @@
 	NSMutableData *responseData;	
 	id<DKDirectionsDelegate> dirDelegate;
 	NSArray *_wp;
-	NSURLConnection *_connection; 
+	NSURLConnection *_connection;
+	BOOL _cancelled;
 }
 
 - (id)initWithDelegate:(id<DKDirectionsDelegate>)delegate;
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
+- (void)cancel;
 
 @end

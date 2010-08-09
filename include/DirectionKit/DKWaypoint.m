@@ -66,7 +66,7 @@ int kDKWaypointPinDescenderWidth = 12;
 {
 	// Try to dequeue an existing pin view first
 	static NSString* WaypointAnnotationIdentifier = @"waypointAnnotationIdentifier";
-	MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+	MKAnnotationView* pinView = (MKAnnotationView *)
 	[map dequeueReusableAnnotationViewWithIdentifier:WaypointAnnotationIdentifier];
 	
 	if (!pinView) {
@@ -88,20 +88,15 @@ int kDKWaypointPinDescenderWidth = 12;
 	
 	pinView.annotation = self;
 
-	if (delegate != nil && hideDetails != YES) {
-		
-		// add a detail disclosure button to the callout which will open a new view controller page
-		//
-		// note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
-		//  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
-		//
-		
+	if (delegate != nil && hideDetails != YES) {		
 		UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 		[rightButton addTarget:self
 						action:@selector(showDetails:)
 			  forControlEvents:UIControlEventTouchUpInside];
 		
 		pinView.rightCalloutAccessoryView = rightButton;
+	} else {
+		pinView.rightCalloutAccessoryView = nil;
 	}
 	
 	return pinView;
