@@ -213,7 +213,10 @@
 #pragma mark Touch Interaction
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-	[routeControl showInterface];
+	
+	if ([self pointInside:point withEvent:event]) {
+		[routeControl showInterface];	
+	}
 	return [super hitTest:point withEvent:event];
 }
 
