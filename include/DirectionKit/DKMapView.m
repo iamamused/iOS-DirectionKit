@@ -68,7 +68,7 @@
 #pragma mark -
 #pragma mark Load Directions
 
-- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
+- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints travelMode:(kDKTravelMode)travelMode;
 {
 	if (self.directions != nil) {
 		[self.directions cancel];
@@ -80,7 +80,7 @@
 	[self zoomToWaypoints:waypoints];
 	
 	self.directions = [[DKGoogleDirections alloc] initWithDelegate:self];
-	[self.directions loadDirectionsThroughWaypoints:waypoints];
+	[self.directions loadDirectionsThroughWaypoints:waypoints travelMode:travelMode];
 
 }
 
@@ -94,6 +94,7 @@
 
 - (void)didFinishWithRoutes:(NSArray *)newRoutes;
 {
+	NSLog(@"didFinishWithRoutes with %d routes", [newRoutes count]);
 	self.routes = newRoutes;
 	if ([self.routes count] > 0) {
 		[self showRoute:[self.routes objectAtIndex:0]];

@@ -47,7 +47,8 @@
 	[sc setDelegate:self];
 
     [(MKMapView *)self.view setMapType:MKMapTypeStandard];
-	[(DKMapView *)self.view loadDirectionsThroughWaypoints:[NSArray arrayWithObjects: cn, rom, fy, sc, nil]];
+	[(DKMapView *)self.view loadDirectionsThroughWaypoints:[NSArray arrayWithObjects: cn, rom, fy, sc, nil] 
+												travelMode:kDKTravelModeWalking];
 	
 }
 

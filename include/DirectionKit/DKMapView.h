@@ -43,7 +43,7 @@
 	
 }
 
-- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
+- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints travelMode:(kDKTravelMode)travelMode;
 - (void)centerOnWaypointIndex:(int)index;
 - (void)centerOnWaypoint:(DKWaypoint *)waypoint;
 

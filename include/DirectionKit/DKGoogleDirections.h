@@ -37,7 +37,7 @@
 }
 
 - (id)initWithDelegate:(id<DKDirectionsDelegate>)delegate;
-- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
+- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints travelMode:(kDKTravelMode)travelMode;
 - (void)cancel;
 
 @end

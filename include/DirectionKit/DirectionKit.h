@@ -25,6 +25,12 @@
 //  THE SOFTWARE.
 //
 
+typedef enum {
+	kDKTravelModeWalking,
+	kDKTravelModeBicycling,
+	kDKTravelModeDriving
+} kDKTravelMode;
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>

@@ -43,7 +43,7 @@
 	return self;
 }
 
-- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;
+- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints travelMode:(kDKTravelMode)travelMode;
 {
 	
 	[dirDelegate didStartWithWaypoints:waypoints];
@@ -74,9 +74,25 @@
 		}
 	}
 	
+	NSString *mode;
+	
+	switch (travelMode) {
+		default:
+		case kDKTravelModeDriving:
+			mode = @"driving";
+			break;
+		case kDKTravelModeWalking:
+			mode = @"walking";
+			break;
+		case kDKTravelModeBicycling:
+			mode = @"bicycling";
+			break;
+	}
+	
 	NSString *assembled = [NSString stringWithFormat:
-						   @"%@?origin=%@&destination=%@&waypoints=%@&sensor=false",
+						   @"%@?mode=%@&origin=%@&destination=%@&waypoints=%@&sensor=false",
 						   @"http://maps.google.com/maps/api/directions/json",
+						   mode,
 						   [origin stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 						   [desitnation stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 						   waypointList];
