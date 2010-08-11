@@ -1,5 +1,5 @@
 //
-//  DKMap.h
+//  DKWaypointControlDelegate.h
 //  DirectionKit
 //
 //  The MIT License
@@ -25,30 +25,12 @@
 //  THE SOFTWARE.
 //
 
-#import "DirectionKit.h"
+#import <UIKit/UIKit.h>
 
-@class DKGoogleDirections;
 @class DKWaypointControl;
 
-// http://stackoverflow.com/questions/1121889/intercepting-hijacking-iphone-touch-events-for-mkmapview/1298330
-
-@interface DKMapView : MKMapView <DKDirectionsDelegate, MKMapViewDelegate, DKWaypointControlDelegate> {
-	UIView *map;
-	DKGoogleDirections *directions;
-	MKPolyline *routePoly;
-	DKWaypointControl *routeControl;
-	NSArray *routes;
-	
-@private
-	
-}
-
-- (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints travelMode:(kDKTravelMode)travelMode;
-- (void)centerOnWaypointIndex:(int)index;
-- (void)centerOnWaypoint:(DKWaypoint *)waypoint;
-
-- (void)removeRouteAndAnnotations;
-- (void)showRoute:(DKRoute *)route;
-- (void)zoomToWaypoints:(NSArray *)waypoints;
+@protocol DKWaypointControlDelegate
+@required
+- (void)dkWaypointControlShowOptions:(DKWaypointControl *)control;
 
 @end

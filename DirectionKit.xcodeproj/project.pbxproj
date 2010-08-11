@@ -59,6 +59,9 @@
 		DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */; };
 		DDD6FB7411C9571B00842991 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6FB7311C9571B00842991 /* pin.png */; };
 		DDE1DE2D11D2529C00BD6454 /* libDirectionKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CF8E911720A330028A53F /* libDirectionKitMobile.a */; };
+		DDF8B97B12132FBB00B6E0A1 /* DKWaypointControlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF8B97812132FBB00B6E0A1 /* DKWaypointControlDelegate.h */; };
+		DDF8B97C12132FBB00B6E0A1 /* DKOptionsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF8B97912132FBB00B6E0A1 /* DKOptionsModalViewController.m */; };
+		DDF8B97D12132FBB00B6E0A1 /* DKOptionsModalViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF8B97A12132FBB00B6E0A1 /* DKOptionsModalViewController.h */; };
 		DDF92E8C11C91D35006F0D97 /* DKWaypointDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +143,9 @@
 		DDD6FB3111C953B200842991 /* DKWaypointAccruacyIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointAccruacyIndicator.h; path = include/DirectionKit/DKWaypointAccruacyIndicator.h; sourceTree = "<group>"; };
 		DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypointAccruacyIndicator.m; path = include/DirectionKit/DKWaypointAccruacyIndicator.m; sourceTree = "<group>"; };
 		DDD6FB7311C9571B00842991 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		DDF8B97812132FBB00B6E0A1 /* DKWaypointControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointControlDelegate.h; path = include/DirectionKit/DKWaypointControlDelegate.h; sourceTree = "<group>"; };
+		DDF8B97912132FBB00B6E0A1 /* DKOptionsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKOptionsModalViewController.m; path = include/DirectionKit/DKOptionsModalViewController.m; sourceTree = "<group>"; };
+		DDF8B97A12132FBB00B6E0A1 /* DKOptionsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKOptionsModalViewController.h; path = include/DirectionKit/DKOptionsModalViewController.h; sourceTree = "<group>"; };
 		DDF92E8B11C91D35006F0D97 /* DKWaypointDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointDelegate.h; path = include/DirectionKit/DKWaypointDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +289,9 @@
 		DD7CF92311720D8B0028A53F /* DirectionKit Framework */ = {
 			isa = PBXGroup;
 			children = (
+				DDF8B97812132FBB00B6E0A1 /* DKWaypointControlDelegate.h */,
+				DDF8B97912132FBB00B6E0A1 /* DKOptionsModalViewController.m */,
+				DDF8B97A12132FBB00B6E0A1 /* DKOptionsModalViewController.h */,
 				DD7CFA3611721D890028A53F /* DirectionKit.h */,
 				DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */,
 				DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */,
@@ -339,6 +348,8 @@
 				DDD6FB3711C953B200842991 /* DKWaypointView.h in Headers */,
 				DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */,
 				DDC1922611CA57CD00DD6C89 /* DKWaypointControl.h in Headers */,
+				DDF8B97B12132FBB00B6E0A1 /* DKWaypointControlDelegate.h in Headers */,
+				DDF8B97D12132FBB00B6E0A1 /* DKOptionsModalViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +461,7 @@
 				DDD6FB3811C953B200842991 /* DKWaypointView.m in Sources */,
 				DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */,
 				DDC1922711CA57CD00DD6C89 /* DKWaypointControl.m in Sources */,
+				DDF8B97C12132FBB00B6E0A1 /* DKOptionsModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

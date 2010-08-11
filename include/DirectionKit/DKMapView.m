@@ -101,6 +101,10 @@
 	}
 }
 
+- (void)didBeginDirectionRequest:(NSArray *)waypoints;
+{
+	
+}
 
 #pragma mark -
 #pragma mark Routing
@@ -116,7 +120,8 @@
 	if (self.routeControl != nil) {
 		[self.routeControl removeFromSuperview];
 	}
-	self.routeControl = [[[DKWaypointControl alloc] initWithRoute:route map:self] autorelease];	
+	self.routeControl = [[[DKWaypointControl alloc] initWithRoute:route map:self] autorelease];
+	self.routeControl.delegate = self;
 }
 
 #pragma mark -
@@ -190,7 +195,7 @@
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
 	// TODO move this to the route object and make in an overlay protocol
     MKPolylineView *plv = [[[MKPolylineView alloc] initWithOverlay:overlay] autorelease];
-    plv.strokeColor = [UIColor blueColor];
+    plv.strokeColor = [[self.routes objectAtIndex:0] strokeColor];
     plv.lineWidth = 3.0;
 	plv.alpha = 0.8f;
     return plv;
@@ -208,6 +213,16 @@
     }
 	
     return nil;
+}
+
+#pragma mark -
+#pragma mark DKWaypointControlDelegate
+
+- (void)dkWaypointControlShowOptions:(DKWaypointControl *)control;
+{
+
+	NSLog(@"Show Options.");
+	
 }
 
 #pragma mark -

@@ -41,6 +41,8 @@ typedef enum {
 	NSArray        *warnings;
 	
 	NSArray        *waypoints;
+	
+	UIColor		   *strokeColor;
 }
 
 // summary contains a short textual description for the route, suitable for naming and disambiguating the route from alternatives.
@@ -62,6 +64,8 @@ typedef enum {
 @property (nonatomic, retain) NSArray *warnings;
 
 @property (nonatomic, retain) NSArray *waypoints;
+
+@property (nonatomic, retain) UIColor *strokeColor;
 
 - (id) initWithDict:(NSDictionary *)dict;
 - (MKPolyline *)polylineWithAccuracy:(kDKRouteAccuracy)accuracy;

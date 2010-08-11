@@ -39,6 +39,7 @@ typedef enum {
 #import "DKDelegate.h"
 #import "DKWaypointDelegate.h"
 #import "DKDirectionsDelegate.h"
+#import "DKWaypointControlDelegate.h"
 #import "DKLocation.h"
 #import "DKGoogleDirections.h"
 #import "DKWaypoint.h"

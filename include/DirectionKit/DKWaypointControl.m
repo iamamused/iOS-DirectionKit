@@ -15,14 +15,17 @@
 
 @implementation DKWaypointControl
 
+@synthesize delegate;
+
 - (id)initWithRoute:(DKRoute *)route map:(DKMapView *)map;
 {
 	
 	if (self = [super init]) {
 
 		_map = [map retain];
+		_route = [route retain];
 		
-		self.frame = CGRectMake(map.frame.origin.x, map.frame.origin.y + map.frame.size.height - 60, map.frame.size.width, 48);
+		self.frame = CGRectMake(map.frame.origin.x, map.frame.origin.y + map.frame.size.height - 70, map.frame.size.width, 58);
 		self.opaque = NO;
 		self.backgroundColor = [UIColor clearColor];
 		self.alpha = 0.0f;
@@ -34,18 +37,24 @@
 			[items addObject:[NSString stringWithFormat:@"%c", 64+i]];
 		}
 
-		_control = [[UISegmentedControl alloc] initWithItems:items];
-		_control.frame = CGRectMake(10, 10, self.frame.size.width - 20, 30);
-		_control.segmentedControlStyle = UISegmentedControlStyleBar;
-		_control.selectedSegmentIndex = UISegmentedControlNoSegment;
-		_control.tintColor = [UIColor blueColor];
-		_control.momentary = YES;
-		
-		[_control addTarget:self
-					 action:@selector(valueChanged:)
-			forControlEvents:UIControlEventValueChanged];
-		
-		[self addSubview:_control];		
+		UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:items];
+		seg.frame = CGRectMake(45, 15, self.frame.size.width - 60, 30);
+		seg.segmentedControlStyle = UISegmentedControlStyleBar;
+		seg.selectedSegmentIndex = UISegmentedControlNoSegment;
+		seg.tintColor = route.strokeColor;
+		seg.momentary = YES;
+		[seg addTarget:self
+				action:@selector(valueChanged:)
+	  forControlEvents:UIControlEventValueChanged];
+		[self addSubview:seg];		
+		[seg release];
+
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+		button.frame = CGRectMake(12, 15, 30, 30);
+		[button addTarget:self
+				action:@selector(showOptions:)
+	  forControlEvents:UIControlEventTouchUpInside];
+		[self addSubview:button];		
 		
 	}
 	
@@ -53,6 +62,13 @@
 	
 }
 
+
+- (void)showOptions:(id)sender;
+{
+	if (delegate != nil) {
+		[delegate dkWaypointControlShowOptions:self];
+	}
+}
 
 - (void)showInterface;
 {
@@ -98,7 +114,7 @@
 
 
 - (void)valueChanged:(id)sender {
-	[_map centerOnWaypointIndex:_control.selectedSegmentIndex];
+	[_map centerOnWaypointIndex:[(UISegmentedControl *)sender selectedSegmentIndex]];
 }
 
 
@@ -115,7 +131,8 @@
     CGContextSaveGState(myContext);
     CGContextSetShadow (myContext, myShadowOffset, 10);
 
-    CGContextSetRGBFillColor (myContext, 1, 1, 1, 1);
+	[_route.strokeColor setStroke];
+	[[UIColor grayColor] setFill];
 	
 	CGRect rrect = CGRectInset(rect, 10, 10);
 	
@@ -139,8 +156,8 @@
 }
 
 - (void)dealloc {
-	[_control release];
 	[_map release];
+	[_route release];
 	[super dealloc];
 }
 

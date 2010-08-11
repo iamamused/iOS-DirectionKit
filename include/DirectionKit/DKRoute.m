@@ -41,10 +41,12 @@
 @synthesize warnings;
 
 @synthesize waypoints;
+@synthesize strokeColor;
 
 - (id)init {
 	if (self = [super init]) {
 		self.legs = [[NSMutableArray array] retain];
+		self.strokeColor = [UIColor blueColor];
 	}
 	return self;
 }
