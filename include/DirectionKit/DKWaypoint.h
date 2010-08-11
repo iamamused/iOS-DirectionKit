@@ -40,6 +40,9 @@
 	
 	BOOL hideDetails;
 	
+	UIColor *pinFillColor;
+	UIColor *pinStrokeColor;
+	
 	// info
 	NSDictionary *info;
 }
@@ -53,6 +56,9 @@
 @property (nonatomic, assign) int position;
 
 @property (nonatomic, retain) NSDictionary *info;
+
+@property (nonatomic, retain) UIColor *pinFillColor;
+@property (nonatomic, retain) UIColor *pinStrokeColor;
 
 @property (nonatomic, assign) BOOL hideDetails;
 

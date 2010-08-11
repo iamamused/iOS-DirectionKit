@@ -31,7 +31,9 @@
 {
 	
 	DKWaypoint *cn = [DKWaypoint waypointWithLatitude:43.643995f Longitude:-79.388237f]; // CN Tower
-	[cn setTitle:@"CN Tower"];
+	[cn setTitle:@"Start @ CN Tower"];
+	[cn setPinFillColor:[UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.75f]];
+	[cn setPinStrokeColor:[UIColor colorWithRed:0.6f green:0.0f blue:0.0f alpha:1.0f]];
 	[cn setDelegate:self];
 	
 	DKWaypoint *rom = [DKWaypoint waypointWithLatitude:43.668038f Longitude:-79.394948f]; // Royal Ontario Museum

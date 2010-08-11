@@ -28,7 +28,7 @@
 		self.alpha = 0.0f;
 		
 		NSMutableArray *items = [NSMutableArray arrayWithCapacity:[route.waypoints count]];
-		[items addObject:@"Start"];
+		[items addObject:@"Start (S)"];
 		for (int i = 1; i < [route.waypoints count]; i++) {
 			//http://stackoverflow.com/questions/2832729/how-to-convert-ascii-value-to-a-character-in-objective-c
 			[items addObject:[NSString stringWithFormat:@"%c", 64+i]];

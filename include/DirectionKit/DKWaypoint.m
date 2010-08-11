@@ -51,6 +51,7 @@ int kDKWaypointPinDescenderWidth = 12;
 @synthesize coordinate, position;
 @synthesize title, subtitle;
 @synthesize hideDetails;
+@synthesize pinFillColor, pinStrokeColor;
 
 @synthesize info;
 
@@ -60,6 +61,15 @@ int kDKWaypointPinDescenderWidth = 12;
 	wp.coordinate = (CLLocationCoordinate2D){lat,lng};
 	[wp autorelease];
 	return wp;
+}
+
+- (id)init;
+{
+	if (self = [super init]) {
+		self.pinStrokeColor = [UIColor blackColor];
+		self.pinFillColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.75f];
+	}
+	return self;
 }
 
 - (MKAnnotationView *)pinViewForMap:(DKMapView *)map; 
@@ -126,11 +136,10 @@ int kDKWaypointPinDescenderWidth = 12;
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSaveGState(context);
 	
-	// Drawing with a white stroke color
-	CGContextSetRGBStrokeColor(context, 0, 0, 0, 1.0);
-	// And draw with a translucent fill color
-	CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 0.75);
+	[self.pinStrokeColor setStroke];
 	
+	[self.pinFillColor setFill];
+
 	
 	CGFloat radius = kDKWaypointPinCornerRadius;
 	// NOTE: At this point you may want to verify that your radius is no more than half
