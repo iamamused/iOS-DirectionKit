@@ -30,6 +30,7 @@
 #import <MapKit/MapKit.h>
 
 // Include your plugin related headers here...
+#import "DKURLCacheConnection.h"
 #import "DKDelegate.h"
 #import "DKWaypointDelegate.h"
 #import "DKDirectionsDelegate.h"

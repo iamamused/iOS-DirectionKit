@@ -27,14 +27,26 @@
 
 #import "DirectionKit.h"
 
-
-@interface DKGoogleDirections : NSObject {
-	NSMutableData *responseData;	
+@interface DKGoogleDirections : NSObject <DKURLCacheConnectionDelegate> {
+	
+	NSString *dataPath;
+	NSString *filePath;
+	NSDate *fileDate;
+	NSMutableArray *urlArray;
+	NSError *error;
+	
+	
 	id<DKDirectionsDelegate> dirDelegate;
 	NSArray *_wp;
 	NSURLConnection *_connection;
 	BOOL _cancelled;
 }
+
+@property (nonatomic, copy) NSString *dataPath;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, retain) NSDate *fileDate;
+@property (nonatomic, retain) NSMutableArray *urlArray;
+@property (nonatomic, retain) NSURLConnection *connection;
 
 - (id)initWithDelegate:(id<DKDirectionsDelegate>)delegate;
 - (void)loadDirectionsThroughWaypoints:(NSArray *)waypoints;

@@ -43,6 +43,8 @@
 		DD7CFA3711721D890028A53F /* DirectionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7CFA3611721D890028A53F /* DirectionKit.h */; };
 		DDC1922611CA57CD00DD6C89 /* DKWaypointControl.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */; };
 		DDC1922711CA57CD00DD6C89 /* DKWaypointControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */; };
+		DDC7E825125D62FB009FD397 /* DKURLCacheConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC7E823125D62FB009FD397 /* DKURLCacheConnection.h */; };
+		DDC7E826125D62FB009FD397 /* DKURLCacheConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC7E824125D62FB009FD397 /* DKURLCacheConnection.m */; };
 		DDD4E8F311C7B7760030CF5B /* DKDirectionsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */; };
 		DDD4E98B11C7C07B0030CF5B /* DKLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD4E98911C7C07B0030CF5B /* DKLocation.h */; };
 		DDD4E98C11C7C07B0030CF5B /* DKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4E98A11C7C07B0030CF5B /* DKLocation.m */; };
@@ -124,6 +126,8 @@
 		DD7CFA3611721D890028A53F /* DirectionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionKit.h; path = include/DirectionKit/DirectionKit.h; sourceTree = "<group>"; };
 		DDC1922411CA57CD00DD6C89 /* DKWaypointControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKWaypointControl.h; path = include/DirectionKit/DKWaypointControl.h; sourceTree = "<group>"; };
 		DDC1922511CA57CD00DD6C89 /* DKWaypointControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKWaypointControl.m; path = include/DirectionKit/DKWaypointControl.m; sourceTree = "<group>"; };
+		DDC7E823125D62FB009FD397 /* DKURLCacheConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKURLCacheConnection.h; path = include/DirectionKit/DKURLCacheConnection.h; sourceTree = "<group>"; };
+		DDC7E824125D62FB009FD397 /* DKURLCacheConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKURLCacheConnection.m; path = include/DirectionKit/DKURLCacheConnection.m; sourceTree = "<group>"; };
 		DDD4E8F211C7B7760030CF5B /* DKDirectionsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDirectionsDelegate.h; path = include/DirectionKit/DKDirectionsDelegate.h; sourceTree = "<group>"; };
 		DDD4E98911C7C07B0030CF5B /* DKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLocation.h; path = include/DirectionKit/DKLocation.h; sourceTree = "<group>"; };
 		DDD4E98A11C7C07B0030CF5B /* DKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKLocation.m; path = include/DirectionKit/DKLocation.m; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				DDD6FB3211C953B200842991 /* DKWaypointAccruacyIndicator.m */,
 				DDD4E98911C7C07B0030CF5B /* DKLocation.h */,
 				DDD4E98A11C7C07B0030CF5B /* DKLocation.m */,
+				DDC7E823125D62FB009FD397 /* DKURLCacheConnection.h */,
+				DDC7E824125D62FB009FD397 /* DKURLCacheConnection.m */,
 			);
 			name = "DirectionKit Framework";
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				DDD6FB3711C953B200842991 /* DKWaypointView.h in Headers */,
 				DDD6FB3911C953B200842991 /* DKWaypointAccruacyIndicator.h in Headers */,
 				DDC1922611CA57CD00DD6C89 /* DKWaypointControl.h in Headers */,
+				DDC7E825125D62FB009FD397 /* DKURLCacheConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +394,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "DirectionKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -450,6 +464,7 @@
 				DDD6FB3811C953B200842991 /* DKWaypointView.m in Sources */,
 				DDD6FB3A11C953B200842991 /* DKWaypointAccruacyIndicator.m in Sources */,
 				DDC1922711CA57CD00DD6C89 /* DKWaypointControl.m in Sources */,
+				DDC7E826125D62FB009FD397 /* DKURLCacheConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,8 +530,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -529,9 +545,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -544,7 +561,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PREBINDING = NO;
 				PRODUCT_NAME = DirectionKitMobile;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -557,7 +574,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = DirectionKitMobile;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;

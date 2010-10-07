@@ -48,7 +48,7 @@
 
     [(MKMapView *)self.view setMapType:MKMapTypeStandard];
 	[(DKMapView *)self.view loadDirectionsThroughWaypoints:[NSArray arrayWithObjects: cn, rom, fy, sc, nil]];
-	
+
 }
 
 - (void)viewDidUnload {
